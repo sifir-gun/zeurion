@@ -26,12 +26,13 @@ n8n auto-hébergé, Supabase/Postgres + pgvector, Telegram (bots de rapport), No
 
 Les compétences vivent dans .claude/skills/, un dossier par compétence : .claude/skills/nom-competence/SKILL.md. Elles se construisent organiquement, quand un flux de travail récurrent émerge : ne pas créer de compétence spéculative.
 
-Backlog de compétences à construire (issu de l'intégration) :
+Compétences disponibles :
 
 - audit-niche-reddit : audit manuel de niche Reddit pour la phase 0 Zeurion
-- generation-skill-md : générer un SKILL.md propre à partir d'un flux de travail décrit
+- generation-skill-md : créer une nouvelle compétence à partir d'un flux de travail décrit
 - post-mortem-venture : post-mortem structuré d'une venture arrêtée
-- Candidats récurrents : conception de workflows n8n, specs d'architecture, schémas SQL, veille outils IA
+
+Backlog (candidats récurrents à formaliser quand ils reviennent) : conception de workflows n8n, specs d'architecture, schémas SQL, veille outils IA.
 
 ## Journal de décisions
 
