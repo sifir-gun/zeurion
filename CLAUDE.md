@@ -16,7 +16,7 @@ Amener Zeurion au bout de sa phase 0 : première venture manuelle jusqu'au premi
 
 ## Règles
 
-Les règles vivent dans .claude/rules/, un fichier par sujet : style de communication, garde-fous Zeurion, livrables techniques.
+Les règles vivent dans .claude/rules/, un fichier par sujet : style de communication, garde-fous Zeurion, livrables techniques, conventions git.
 
 ## Outils connectés
 
