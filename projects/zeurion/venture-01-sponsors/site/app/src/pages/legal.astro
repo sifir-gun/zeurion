@@ -1,0 +1,45 @@
+---
+import Base from '../layouts/Base.astro';
+// Données : site/donnees-legales.md. Les champs [TO COMPLETE] sont bloquants
+// pour la mise en vente (voir la même source). Relecture juridique à prévoir.
+---
+
+<Base
+  title="Legal notice — zeurion.ai"
+  description="Legal notice (mentions légales) for zeurion.ai, operated by Agence Wengraf SASU."
+>
+  <main class="container">
+    <p class="mono eyebrow"><a href="/">← zeurion.ai</a></p>
+    <h1>Legal notice / Mentions légales</h1>
+
+    <h2>Publisher / Éditeur</h2>
+    <p>
+      AGENCE WENGRAF, société par actions simplifiée unipersonnelle (SASU) au capital de
+      1 000,00 €, immatriculée au RCS de Thonon-les-Bains sous le numéro 992 926 527
+      (SIRET du siège : 992 926 527 00019), inscrite au RNE.
+      Numéro de TVA intracommunautaire : FR94992926527.
+    </p>
+    <p>Siège social : [TO COMPLETE : adresse postale complète], Archamps, France.</p>
+    <p>Directeur de la publication : [TO COMPLETE : à confirmer].</p>
+    <p>Contact : <a href="mailto:contact@zeurion.ai">contact@zeurion.ai</a></p>
+
+    <h2>Hosting / Hébergeur</h2>
+    <p>[TO COMPLETE : nom, raison sociale et adresse de l'hébergeur, au moment du déploiement.]</p>
+
+    <h2>Intellectual property</h2>
+    <p>
+      All content on this site (text, design, reports) is the property of Agence Wengraf
+      SASU unless otherwise stated. Third-party brand names mentioned in reports or samples
+      belong to their respective owners and are cited for identification purposes only,
+      based on publicly available information.
+    </p>
+  </main>
+</Base>
+
+<style>
+  main { padding-top: 3.5rem; max-width: 720px; }
+  .eyebrow { font-size: 0.875rem; margin-bottom: 1rem; }
+  .eyebrow a { text-decoration: none; }
+  h2 { margin: 2rem 0 0.5rem; font-size: 1.2rem; }
+  p { color: var(--ink-soft); margin-bottom: 0.75rem; }
+</style>

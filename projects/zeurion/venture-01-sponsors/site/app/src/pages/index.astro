@@ -1,0 +1,187 @@
+---
+import Base from '../layouts/Base.astro';
+
+// Lien de paiement Stripe : à renseigner par Guney depuis le dashboard Stripe.
+// Tant qu'il est vide, le bouton d'achat est désactivé (vente bloquée : pages
+// légales à finaliser, voir site/donnees-legales.md).
+const STRIPE_PAYMENT_LINK = '';
+
+const inboxRows = [
+  { tier: 1, brand: 'Tines', subject: 'Same campaign across 4 security newsletters in 5 weeks', tag: 'PRIMARY ×5', date: 'Jul 06' },
+  { tier: 1, brand: 'Sublime Security', subject: 'Bought a full week of Risky Business inventory', tag: 'TAKEOVER', date: 'Jul 10' },
+  { tier: 1, brand: 'Corelight', subject: 'Weekly pack: newsletter slots plus sponsored demo', tag: 'PRIMARY ×3', date: 'Jul 01' },
+  { tier: 1, brand: 'Nebulock', subject: 'Paid for a wholly sponsored podcast episode', tag: 'DEDICATED', date: 'Jul 08' },
+  { tier: 2, brand: 'ThreatLocker', subject: 'On every episode of the segment leader since April', tag: 'AUDIO ×10', date: 'Jul 21' },
+  { tier: 2, brand: 'runZero', subject: 'Three comparable titles inside three weeks', tag: 'PRIMARY ×3', date: 'Jun 26' },
+];
+
+const faq = [
+  {
+    q: 'My list is under 5,000 subscribers. Is this for me?',
+    a: 'Honest answer: direct sponsorship sales work best for niched B2B or prosumer newsletters from roughly 2,000 engaged subscribers, and get materially easier above 5,000. If your list is general-interest and small, an ad network is probably a better first step, and we would rather tell you that than sell you a report.',
+  },
+  {
+    q: 'How is this different from a sponsor database?',
+    a: 'Databases sell you the same list they sell everyone. This report is built for one newsletter: brands matched to your niche with dated evidence they already sponsor your peers, the person likely to own that budget with the source for each claim, and a written pitch per brand. Fixed price, no commission. Marketplaces charge 15 to 30 percent of every deal (Paved lists a 30 percent marketplace fee; Passionfroot up to 15 percent plus transaction fees, per their public pricing pages).',
+  },
+  {
+    q: 'Do you guarantee I will close a sponsor?',
+    a: 'No, and you should distrust anyone who does. What we guarantee is the evidence: every brand in your report comes with a dated, linked sponsorship observation you can check yourself, and any email address we could not verify is marked as such.',
+  },
+  {
+    q: 'Where does the data come from?',
+    a: 'Public sources only: newsletter archives, podcast feeds, sponsor pages, press releases. Nothing scraped from behind a login, nobody contacted on your behalf, no guessed email addresses.',
+  },
+  {
+    q: 'What do you need from me?',
+    a: 'Five minutes: your newsletter URL, your niche in one sentence, subscriber count, open rate if you know it, and optionally the newsletters you consider comparable. The report is delivered within 5 business days as a PDF plus a CSV of contacts.',
+  },
+];
+---
+
+<Base
+  title="Zeurion — Find the sponsors already buying newsletters like yours"
+  description="A one-time prospecting report for niche B2B newsletter operators: 30 brands with dated proof they sponsor your peers, the right contact, and a ready-to-send pitch for each. €349, no commission."
+>
+  <header class="hero">
+    <div class="container">
+      <p class="mono eyebrow">Sponsor prospecting, done for you</p>
+      <h1>30 brands already sponsoring newsletters like yours.</h1>
+      <p class="sub">
+        A one-time report for niche B2B newsletter operators (2,000 to 50,000 subscribers):
+        who is actively buying sponsorships in your vertical, who owns that budget, and a
+        ready-to-send pitch for each brand. No commission, no marketplace, no retainer.
+      </p>
+      {STRIPE_PAYMENT_LINK
+        ? <a class="btn" href={STRIPE_PAYMENT_LINK}>Get your report — €349</a>
+        : <a class="btn" aria-disabled="true" href="#buy">Checkout opens soon — €349</a>}
+    </div>
+  </header>
+
+  <section class="proof" aria-labelledby="proof-title">
+    <div class="container">
+      <h2 id="proof-title">From the sample report</h2>
+      <p class="section-note">
+        Prepared for a cybersecurity newsletter with ~15,000 subscribers. The operator's
+        identity stays private, exactly as yours will.
+      </p>
+      <div class="inbox" role="list">
+        {inboxRows.map((row) => (
+          <div class="row" role="listitem">
+            <span class={`dot ${row.tier === 1 ? 'full' : ''}`} aria-hidden="true"></span>
+            <span class="brand">{row.brand}</span>
+            <span class="subject">{row.subject}</span>
+            <span class="tag mono">{row.tag}</span>
+            <span class="date mono">{row.date}</span>
+          </div>
+        ))}
+      </div>
+      <p class="stats mono">
+        103 dated observations · 14+ sources scanned · every claim linked to a public source
+      </p>
+      <p><a href="/sample">Read three full entries from the sample →</a></p>
+    </div>
+  </section>
+
+  <section class="offer" aria-labelledby="offer-title">
+    <div class="container">
+      <h2 id="offer-title">What you get</h2>
+      <ul class="offer-list">
+        <li><strong>30 matched brands</strong>, each with dated, linked evidence that they already sponsor newsletters or podcasts your audience reads.</li>
+        <li><strong>One contact per brand</strong>: name, role, the public source for both, and an honest email status (published, or to verify).</li>
+        <li><strong>30 ready-to-send pitches</strong> anchored on each brand's observed sponsorship, plus two follow-up templates.</li>
+        <li><strong>A pricing recommendation</strong> benchmarked against the only public rate card in your segment, so you don't price blind.</li>
+        <li><strong>A mini media kit</strong>: the five numbers that sell your newsletter, and how to present them.</li>
+      </ul>
+      <h3>How it works</h3>
+      <ol class="steps">
+        <li>Order, then fill a five-minute intake form.</li>
+        <li>We scan the public archives of the newsletters and podcasts comparable to yours.</li>
+        <li>You receive the report within 5 business days: PDF plus a CSV of contacts.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="pricing" id="buy" aria-labelledby="pricing-title">
+    <div class="container">
+      <h2 id="pricing-title">One report, one price</h2>
+      <p class="price"><span class="mono">€349</span> one-time</p>
+      <p class="section-note">
+        One newsletter, one niche, one report. B2B service; VAT treatment depends on your
+        country and is handled at checkout.
+      </p>
+      {STRIPE_PAYMENT_LINK
+        ? <a class="btn" href={STRIPE_PAYMENT_LINK}>Get your report — €349</a>
+        : <a class="btn" aria-disabled="true" href="#buy">Checkout opens soon — €349</a>}
+    </div>
+  </section>
+
+  <section class="faq" aria-labelledby="faq-title">
+    <div class="container">
+      <h2 id="faq-title">Questions, answered plainly</h2>
+      {faq.map((item) => (
+        <details>
+          <summary>{item.q}</summary>
+          <p>{item.a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+</Base>
+
+<style>
+  .hero { padding: 5.5rem 0 4rem; }
+  .eyebrow { color: var(--accent); font-size: 0.875rem; margin-bottom: 1rem; }
+  .sub { color: var(--ink-soft); max-width: 44rem; margin: 1.25rem 0 2rem; font-size: 1.1rem; }
+
+  section { padding: 3.5rem 0 0; }
+  .section-note { color: var(--ink-soft); margin: 0.75rem 0 1.5rem; max-width: 44rem; }
+
+  .inbox {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .row {
+    display: grid;
+    grid-template-columns: 1rem 11rem 1fr auto auto;
+    gap: 0.9rem;
+    align-items: center;
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid var(--line);
+    transition: background 180ms ease, transform 180ms ease;
+  }
+  .row:last-child { border-bottom: none; }
+  .row:hover { background: var(--muted); transform: translateX(2px); }
+  .dot {
+    width: 0.55rem; height: 0.55rem;
+    border-radius: 50%;
+    border: 1.5px solid var(--accent);
+  }
+  .dot.full { background: var(--accent); }
+  .brand { font-weight: 600; }
+  .subject { color: var(--ink-soft); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .tag { font-size: 0.72rem; background: var(--muted); border: 1px solid var(--line); border-radius: 4px; padding: 0.1rem 0.4rem; }
+  .date { font-size: 0.8rem; color: var(--ink-soft); }
+  .stats { color: var(--ink-soft); font-size: 0.85rem; margin: 1.25rem 0 0.5rem; }
+
+  .offer-list { padding-left: 1.2rem; display: grid; gap: 0.75rem; margin: 1.25rem 0 2rem; }
+  .steps { padding-left: 1.2rem; display: grid; gap: 0.5rem; margin-top: 1rem; color: var(--ink-soft); }
+
+  .pricing { text-align: left; }
+  .price { font-family: var(--font-display); font-size: 2rem; font-weight: 700; margin: 0.5rem 0; }
+  .price .mono { font-family: var(--font-mono); }
+
+  .faq details {
+    border-bottom: 1px solid var(--line);
+    padding: 0.9rem 0;
+  }
+  .faq summary { font-weight: 600; cursor: pointer; }
+  .faq details p { color: var(--ink-soft); margin-top: 0.6rem; max-width: 44rem; }
+
+  @media (max-width: 720px) {
+    .row { grid-template-columns: 1rem 1fr auto; }
+    .subject, .date { display: none; }
+  }
+</style>

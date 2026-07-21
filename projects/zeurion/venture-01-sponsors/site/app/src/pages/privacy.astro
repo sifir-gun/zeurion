@@ -1,0 +1,53 @@
+---
+import Base from '../layouts/Base.astro';
+// Politique minimale v1 : pas de cookies, pas d'analytics tiers au lancement.
+// À mettre à jour si Plausible/umami est ajouté (rester sans bannière si exempt).
+---
+
+<Base
+  title="Privacy — zeurion.ai"
+  description="Privacy policy for zeurion.ai."
+>
+  <main class="container">
+    <p class="mono eyebrow"><a href="/">← zeurion.ai</a></p>
+    <h1>Privacy</h1>
+
+    <h2>What we collect</h2>
+    <p>
+      This site sets no cookies and runs no third-party analytics. If you buy a report, the
+      payment is processed by Stripe (we receive your name, email, and billing country, not
+      your card details), and the intake form data you provide (newsletter URL, niche,
+      audience figures) is used solely to produce your report.
+    </p>
+
+    <h2>How long we keep it</h2>
+    <p>
+      Order and invoicing data is kept for the durations required by French accounting law.
+      Intake data and your report are kept so we can answer follow-up questions, and deleted
+      on request.
+    </p>
+
+    <h2>Your rights</h2>
+    <p>
+      Under the GDPR you can request access, rectification, or deletion of your personal
+      data at any time: <a href="mailto:contact@zeurion.ai">contact@zeurion.ai</a>. Data
+      controller: Agence Wengraf SASU (see the Legal notice).
+    </p>
+
+    <h2>Reports and third parties</h2>
+    <p>
+      Reports contain professional contact information about companies, compiled from
+      publicly available sources only. We never guess email addresses, and we mark
+      unverified data as such. Any person mentioned in a report may request removal by
+      writing to the address above.
+    </p>
+  </main>
+</Base>
+
+<style>
+  main { padding-top: 3.5rem; max-width: 720px; }
+  .eyebrow { font-size: 0.875rem; margin-bottom: 1rem; }
+  .eyebrow a { text-decoration: none; }
+  h2 { margin: 2rem 0 0.5rem; font-size: 1.2rem; }
+  p { color: var(--ink-soft); margin-bottom: 0.75rem; }
+</style>

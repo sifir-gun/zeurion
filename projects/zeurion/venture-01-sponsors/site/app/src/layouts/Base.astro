@@ -1,0 +1,60 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+}
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <slot />
+    <footer>
+      <div class="container footer-inner">
+        <span class="mono footer-brand">zeurion.ai</span>
+        <nav aria-label="Legal">
+          <a href="/legal">Legal notice</a>
+          <a href="/terms">Terms</a>
+          <a href="/privacy">Privacy</a>
+          <a href="mailto:contact@zeurion.ai">contact@zeurion.ai</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<style>
+  footer {
+    border-top: 1px solid var(--line);
+    margin-top: 5rem;
+    padding: 2rem 0;
+  }
+  .footer-inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.875rem;
+  }
+  .footer-brand { color: var(--ink-soft); }
+  nav { display: flex; flex-wrap: wrap; gap: 1.25rem; }
+  nav a { color: var(--ink-soft); text-decoration: none; }
+  nav a:hover { color: var(--accent); }
+</style>

@@ -1,0 +1,68 @@
+---
+import Base from '../layouts/Base.astro';
+// Squelette de CGV. BLOQUANT : relecture par un professionnel du droit avant
+// la première vente (architecture v2, section 9). Régime TVA à valider avec
+// le comptable (voir site/donnees-legales.md).
+---
+
+<Base
+  title="Terms of sale — zeurion.ai"
+  description="Terms of sale for the Zeurion sponsor prospecting report."
+>
+  <main class="container">
+    <p class="mono eyebrow"><a href="/">← zeurion.ai</a></p>
+    <h1>Terms of sale</h1>
+    <p class="draft mono">[DRAFT : pending legal review, not yet in force]</p>
+
+    <h2>1. Service</h2>
+    <p>
+      Zeurion provides a one-time sponsor prospecting report prepared for a single
+      newsletter, as described on the order page: matched brands with sourced evidence,
+      contact identification with sources and email status, pitch drafts, a pricing
+      recommendation, and a summary media kit. The service is provided by Agence Wengraf
+      SASU (see the Legal notice) and is intended for business customers (B2B).
+    </p>
+
+    <h2>2. Price and payment</h2>
+    <p>
+      The price is displayed at checkout and paid in full at order via our payment
+      provider (Stripe). VAT treatment depends on the customer's country and status:
+      reverse charge may apply for EU businesses; French VAT applies where required.
+    </p>
+
+    <h2>3. Delivery</h2>
+    <p>
+      The report is delivered by email within 5 business days of receiving the completed
+      intake form. If we consider the newsletter is not a fit for the method (for example,
+      an audience too general or too small for direct sponsorship sales), we say so and
+      refund in full before starting the work.
+    </p>
+
+    <h2>4. What we do not promise</h2>
+    <p>
+      We do not guarantee commercial outcomes (closed sponsorships or revenue). We
+      guarantee the documented nature of the report: factual claims are sourced and dated,
+      and unverified contact details are marked as such. Contact data decays; the report
+      reflects public information at the date of research.
+    </p>
+
+    <h2>5. Data and conduct</h2>
+    <p>
+      Reports are built from publicly available information only. The customer remains
+      solely responsible for their own outreach and its compliance with applicable
+      anti-spam and data protection laws.
+    </p>
+
+    <h2>6. Governing law</h2>
+    <p>These terms are governed by French law. [TO COMPLETE : juridiction, médiation le cas échéant, après relecture juridique.]</p>
+  </main>
+</Base>
+
+<style>
+  main { padding-top: 3.5rem; max-width: 720px; }
+  .eyebrow { font-size: 0.875rem; margin-bottom: 1rem; }
+  .eyebrow a { text-decoration: none; }
+  .draft { color: var(--accent); font-size: 0.85rem; margin-bottom: 1.5rem; }
+  h2 { margin: 2rem 0 0.5rem; font-size: 1.2rem; }
+  p { color: var(--ink-soft); margin-bottom: 0.75rem; }
+</style>
