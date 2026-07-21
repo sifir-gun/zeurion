@@ -48,7 +48,7 @@ Tarifs API Claude au 2026-07-21 (référentiel officiel) : Haiku 4.5 à 1 $/M en
 | Matching et scoring par niche | Sonnet 4.6 | 200k entrée + 20k sortie | 0,90 $ |
 | Rédaction de 30 pitchs personnalisés | Sonnet 4.6 | 90k entrée + 15k sortie | 0,50 $ |
 | Enrichissement et vérification de 30 contacts | API tierce (type Hunter, mutualisée) | 30 vérifications | 3,00 $ |
-| Quote-part infra (Supabase, VPS, embeddings) | — | — | 1,50 $ |
+| Quote-part infra (Supabase, VPS, embeddings) | s.o. | s.o. | 1,50 $ |
 | **Total estimé** | | | **7 $ environ** |
 
 Marge de sécurité x1,5 (retries, croissance des scans) : **coût de service retenu 10 $ (environ 9 €) par client par mois.**
