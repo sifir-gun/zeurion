@@ -87,3 +87,53 @@ Attention, transition récente : Luke Retterath était CMO (cité CMO dans un bi
 Email : aucun email individuel publié. Pattern documenté par LeadIQ : prenom@material.security (81 %) : nick@material.security plausible mais À VÉRIFIER.
 
 Confiance : HAUT (source primaire officielle consultée le jour même, corroborée par LinkedIn public). Réserve : transition CMO vers VP Marketing récente.
+
+---
+
+## Palo Alto Networks, équipe Cortex (fragments 1/2 et 2/2, reçus le 2026-07-21)
+
+Taille : grande entreprise cotée (PANW), 16 068 employés FY2025, CA 9,22 Md$ (source : https://www.paloaltonetworks.com/company/press/2025/palo-alto-networks-reports-fiscal-fourth-quarter-and-fiscal-year-2025-financial-results).
+
+Contact recommandé : **Kasey Cross, Director of Product Marketing, Cortex XSIAM**. Titre confirmé par la bio speaker du webinaire « Introducing Cortex AgentiX » (FutureB2B, fin 2025) : https://events.futureb2b.com/on-demand/2716/introducing-cortex-agentix-meet-your-ai-agent-workforce/ (consulté 21/07/2026). Toujours en poste : billets blog PANW du 18/12/2025 et 29/01/2026 (https://www.paloaltonetworks.com/blog/author/kasey-cross/). LinkedIn public : https://www.linkedin.com/in/kaseycross/.
+
+Repli : **Peter Havens, Principal Product Marketing Manager, Cortex** (même bio webinaire). Pas d'email marketing/sponsoring générique publié côté PANW.
+
+NE PAS CIBLER : Joshua Costa (ex-Director PMM Cortex & Unit 42), parti en juin 2026 chez Zscaler comme VP Product Marketing SecOps (annonce Zscaler et post de départ LinkedIn). Les annuaires Wiza/RocketReach le listent encore chez PANW (obsolètes).
+
+Notes : TheOrg ne montre pas de marketing dans l'équipe Cortex. CMO globale = Kelly Waldher (marketing corporate, hors périmètre). Poste ouvert « Director, Product Marketing XSIAM » (équipe en croissance) : https://jobs.paloaltonetworks.com/en/job/santa-clara/director-product-marketing-xsiam/47263/74147579488.
+
+Email : non publié ; pattern PANW non documenté publiquement, à vérifier.
+
+Confiance : haute sur identité/poste (sources de moins de 6 mois) ; moyenne sur le fait qu'elle soit l'acheteuse directe (achat média souvent via demand gen/agence à cette taille ; elle reste le bon point d'entrée Cortex).
+
+---
+
+## Push Security (fragments 1/2 et 2/2, reçus le 2026-07-21)
+
+Taille : scale-up, 102 employés environ en juin 2026 (LeadIQ : https://leadiq.com/c/push-security/60916df1455c0e3bf302afcb, consulté 21/07/2026). Series B 30 M$ le 24/04/2025, menée par Redpoint Ventures avec Datadog Ventures, B3 Capital, GV, Decibel (https://pushsecurity.com/news/push-security-secures-30-million-series-b-funding). Clients +380 % YoY (janv. 2025), 1,5 M+ endpoints. NB : l'estimation revenu LeadIQ (250-500 M$) est manifestement erronée, à ignorer.
+
+Contact recommandé : **Chris Tilton, Chief Marketing Officer**. Nomination annoncée le 15/04/2025 : https://www.businesswire.com/news/home/20250415873660/en/ ; annonce sur le site Push : https://pushsecurity.com/news/chris-tilton-new-push-cmo ; son billet : https://pushsecurity.com/blog/why-im-joining-push-security-chris-tilton/. Profil : ex-VP Marketing Bugcrowd, passages Cobalt.io et Probely.
+
+Repli : **Alex Henshall, VP, Product Marketing**. Sources : LinkedIn public https://uk.linkedin.com/in/alexhenshall ; RocketReach ; auteur actif du blog Push, dernier billet 19/05/2026. LeadIQ liste aussi un « Head of Field & Channel Marketing » (initiales C.F., nom non public).
+
+Canal générique : formulaire https://pushsecurity.com/contact, aucun email hello@/press@/marketing@ publié (pages /about et /contact vérifiées le 21/07/2026). La page /about ne liste que les 3 cofondateurs (Adam Bateman CEO, Tyrone Erasmus CTO, Jacques Louw CPO).
+
+Email : non publié. Pattern documenté : First.Last@pushsecurity.com (LeadIQ, 92 % d'usage), donc chris.tilton@pushsecurity.com plausible mais à vérifier.
+
+Confiance : haute (nomination de 15 mois environ, aucun signal de départ ; CMO d'une boîte de 100 personnes = décideur naturel du sponsoring). Réserve mineure : pas de contenu public 2026 signé de lui.
+
+---
+
+## Opal Security (fragments 1/2 et 2/2, reçus le 2026-07-21)
+
+Taille : startup en forte croissance. 59 M$ levés au total, dont 23 M$ annoncés le 04/06/2026 (Greylock + Battery Ventures co-lead, avec Cambium Capital) : https://www.financialcontent.com/article/bizwire-2026-6-4-opal-security-raises-23m-and-expands-leadership-team-to-unify-identity-governance-across-human-non-human-and-agentic-ai (miroir Businesswire). Nouveau CEO Howard Ting (ex-Cyberhaven) annoncé le 11/12/2025 ; plus de 60 % de l'équipe a rejoint depuis début 2026. Effectif estimé 40-70, pas de chiffre 2026 public.
+
+Contact recommandé : **Michael Kwon, VP of Marketing** (ex-Clumio). Sources : communiqué du 04/06/2026 + page équipe officielle https://www.opal.dev/about (consultée 21/07/2026) qui le liste « VP of Marketing ».
+
+Repli : **Christine Ooley, Head of Product & Solutions Marketing**, listée sur https://www.opal.dev/about. Contact média du communiqué du 04/06/2026 avec EMAIL PUBLIÉ : christine@opal.dev.
+
+Mise en garde fraîcheur : Sara vonDohren (« Director, Marketing » Opal, arrivée mi-2024, menait la demand gen 2024-2025) ne figure PLUS sur la page équipe de juillet 2026 : probablement partie ou repositionnée après l'arrivée du nouveau CEO. Ne pas la cibler en priorité ; Kwon/Ooley sont à jour.
+
+Email : non publié pour Kwon, à vérifier. Adresses Opal publiées : christine@opal.dev (communiqué 06/2026) et sales@opal.dev (2023, ancien). Format prenom@opal.dev observé, sans garantie pour Kwon.
+
+Confiance : haute, source primaire (site officiel) de moins de 2 mois.
