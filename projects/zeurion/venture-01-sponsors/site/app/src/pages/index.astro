@@ -7,12 +7,12 @@ import Base from '../layouts/Base.astro';
 const STRIPE_PAYMENT_LINK = '';
 
 const inboxRows = [
-  { tier: 1, brand: 'Tines', subject: 'Same campaign across 4 security newsletters in 5 weeks', tag: 'PRIMARY ×5', date: 'Jul 06' },
-  { tier: 1, brand: 'Sublime Security', subject: 'Bought a full week of Risky Business inventory', tag: 'TAKEOVER', date: 'Jul 10' },
-  { tier: 1, brand: 'Corelight', subject: 'Weekly pack: newsletter slots plus sponsored demo', tag: 'PRIMARY ×3', date: 'Jul 01' },
-  { tier: 1, brand: 'Nebulock', subject: 'Paid for a wholly sponsored podcast episode', tag: 'DEDICATED', date: 'Jul 08' },
-  { tier: 2, brand: 'ThreatLocker', subject: 'On every episode of the segment leader since April', tag: 'AUDIO ×10', date: 'Jul 21' },
-  { tier: 2, brand: 'runZero', subject: 'Three comparable titles inside three weeks', tag: 'PRIMARY ×3', date: 'Jun 26' },
+  { tier: 1, brand: 'Tines', subject: 'Same campaign in 4 newsletters, 5 weeks', tag: 'PRIMARY ×5', date: 'Jul 06' },
+  { tier: 1, brand: 'Sublime Security', subject: 'Bought a full Risky Business week', tag: 'TAKEOVER', date: 'Jul 10' },
+  { tier: 1, brand: 'Corelight', subject: 'Weekly pack with sponsored demo', tag: 'PRIMARY ×3', date: 'Jul 01' },
+  { tier: 1, brand: 'Nebulock', subject: 'Paid a wholly sponsored episode', tag: 'DEDICATED', date: 'Jul 08' },
+  { tier: 2, brand: 'ThreatLocker', subject: 'On every episode since April', tag: 'AUDIO ×10', date: 'Jul 21' },
+  { tier: 2, brand: 'runZero', subject: 'Three titles inside three weeks', tag: 'PRIMARY ×3', date: 'Jun 26' },
 ];
 
 const faq = [
@@ -23,6 +23,10 @@ const faq = [
   {
     q: 'How is this different from a sponsor database?',
     a: 'Databases sell you the same list they sell everyone. This report is built for one newsletter: brands matched to your niche with dated evidence they already sponsor your peers, the person likely to own that budget with the source for each claim, and a written pitch per brand. Fixed price, no commission. Marketplaces charge 15 to 30 percent of every deal (Paved lists a 30 percent marketplace fee; Passionfroot up to 15 percent plus transaction fees, per their public pricing pages).',
+  },
+  {
+    q: 'Does this only work for cybersecurity newsletters?',
+    a: 'No. The sample is cybersecurity because it was our first vertical, but the method is niche-agnostic. What it does require is a vertical with enough comparable newsletters and podcasts that already carry sponsors, roughly ten or more. That is exactly what the fit check verifies before any work starts, and if your niche does not clear that bar, we tell you and refund in full.',
   },
   {
     q: 'Do you guarantee I will close a sponsor?',
@@ -40,7 +44,7 @@ const faq = [
 ---
 
 <Base
-  title="Zeurion — Find the sponsors already buying newsletters like yours"
+  title="Zeurion · Find the sponsors already buying newsletters like yours"
   description="A one-time prospecting report for niche B2B newsletter operators: 30 brands with dated proof they sponsor your peers, the right contact, and a ready-to-send pitch for each. €349, no commission."
 >
   <header class="hero">
@@ -53,8 +57,12 @@ const faq = [
         ready-to-send pitch for each brand. No commission, no marketplace, no retainer.
       </p>
       {STRIPE_PAYMENT_LINK
-        ? <a class="btn" href={STRIPE_PAYMENT_LINK}>Get your report — €349</a>
-        : <a class="btn" aria-disabled="true" href="#buy">Checkout opens soon — €349</a>}
+        ? <a class="btn" href={STRIPE_PAYMENT_LINK}>Get your report · €349</a>
+        : <a class="btn" href="mailto:contact@zeurion.ai?subject=Notify%20me%20when%20checkout%20opens">Opening soon at €349 · get notified</a>}
+      <p class="guarantee">
+        Fit check first: if your newsletter isn't right for the method, we say so and
+        refund in full before any work starts. <a href="/terms">Terms</a>
+      </p>
     </div>
   </header>
 
@@ -110,9 +118,19 @@ const faq = [
         One newsletter, one niche, one report. B2B service; VAT treatment depends on your
         country and is handled at checkout.
       </p>
+      <p class="roi">
+        The math: newsletters comparable to our sample sell primary placements at $1,950
+        and up (CloudSecList's public rate card, sold out into 2026). One closed sponsor
+        at that level covers this report several times over, and four booked slots a month
+        is roughly $8,000 of inventory most niche newsletters leave unmonetized.
+      </p>
       {STRIPE_PAYMENT_LINK
-        ? <a class="btn" href={STRIPE_PAYMENT_LINK}>Get your report — €349</a>
-        : <a class="btn" aria-disabled="true" href="#buy">Checkout opens soon — €349</a>}
+        ? <a class="btn" href={STRIPE_PAYMENT_LINK}>Get your report · €349</a>
+        : <a class="btn" href="mailto:contact@zeurion.ai?subject=Notify%20me%20when%20checkout%20opens">Opening soon at €349 · get notified</a>}
+      <p class="guarantee">
+        Fit check first: if your newsletter isn't right for the method, we say so and
+        refund in full before any work starts. <a href="/terms">Terms</a>
+      </p>
     </div>
   </section>
 
@@ -172,6 +190,16 @@ const faq = [
   .pricing { text-align: left; }
   .price { font-family: var(--font-display); font-size: 2rem; font-weight: 700; margin: 0.5rem 0; }
   .price .mono { font-family: var(--font-mono); }
+  .roi {
+    background: var(--muted);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 0.85rem 1.1rem;
+    color: var(--ink-soft);
+    max-width: 44rem;
+    margin: 0 0 1.5rem;
+  }
+  .guarantee { color: var(--ink-soft); font-size: 0.9rem; margin-top: 0.9rem; max-width: 40rem; }
 
   .faq details {
     border-bottom: 1px solid var(--line);

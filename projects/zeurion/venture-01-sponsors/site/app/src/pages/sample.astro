@@ -1,9 +1,42 @@
 ---
 import Base from '../layouts/Base.astro';
+
+const fullList = [
+  { n: 1, brand: 'Tines', signal: '7+ placements across 4 newsletters in 5 weeks', tier: 1 },
+  { n: 2, brand: 'Sublime Security', signal: 'Full Risky Business week, plus tl;dr sec', tier: 1 },
+  { n: 3, brand: 'Maze', signal: '6 placements across 4 sources, live launch campaign', tier: 1 },
+  { n: 4, brand: 'Corelight', signal: 'Risky Business weekly pack, three slots', tier: 1 },
+  { n: 5, brand: 'Nebulock', signal: 'Wholly sponsored episode on threat hunting', tier: 1 },
+  { n: 6, brand: 'Wiz', signal: 'Two tl;dr sec primaries plus two publisher sponsor pages', tier: 1 },
+  { n: 7, brand: 'runZero', signal: 'Three comparable titles inside three weeks', tier: 1 },
+  { n: 8, brand: 'Dropzone', signal: 'Wholly sponsored episode on AI SOC analysis', tier: 1 },
+  { n: 9, brand: 'Panther', signal: 'Newsletter placement plus its own detection media', tier: 1 },
+  { n: 10, brand: 'ThreatLocker', signal: '10+ airings across three shows this quarter', tier: 1 },
+  { n: 11, brand: 'authentik', signal: 'Newsletter slot plus a sponsored podcast episode', tier: 2 },
+  { n: 12, brand: 'Thinkst Canary', signal: 'Newsletter slot plus sponsored interview, same day', tier: 2 },
+  { n: 13, brand: 'Material Security', signal: 'Monthly podcast rotation, three episodes', tier: 2 },
+  { n: 14, brand: 'Palo Alto Networks', signal: 'Newsletter and podcast spend, major budget', tier: 2 },
+  { n: 15, brand: 'Push Security', signal: 'Primary newsletter slot (webinar campaign)', tier: 2 },
+  { n: 16, brand: 'Opal Security', signal: 'Two native ads in the same title, active-buyer listing', tier: 2 },
+  { n: 17, brand: 'SpecterOps', signal: 'Two consecutive weeks ahead of Black Hat', tier: 2 },
+  { n: 18, brand: 'Prowler', signal: 'Wholly sponsored podcast episode', tier: 2 },
+  { n: 19, brand: 'Vanta', signal: 'Podcast sponsorship plus active-buyer listing', tier: 2 },
+  { n: 20, brand: 'Scanner.dev', signal: 'Sponsored conversation in a comparable newsletter', tier: 2 },
+  { n: 21, brand: 'Varonis', signal: 'Primary slot, event campaign', tier: 3 },
+  { n: 22, brand: 'Teleport', signal: 'Sponsored link plus sponsor page listing', tier: 3 },
+  { n: 23, brand: 'Nudge Security', signal: 'Sponsored link plus sponsor page listing', tier: 3 },
+  { n: 24, brand: 'Intruder', signal: 'Primary newsletter slot', tier: 3 },
+  { n: 25, brand: 'BlinkOps', signal: 'Primary newsletter slot', tier: 3 },
+  { n: 26, brand: 'Drata', signal: 'Two properties: newsletter and podcast portfolio', tier: 3 },
+  { n: 27, brand: 'Persona', signal: 'Primary newsletter slot', tier: 3 },
+  { n: 28, brand: 'Speakeasy', signal: 'Two comparable newsletters in one month', tier: 3 },
+  { n: 29, brand: 'Minimal', signal: 'Secondary newsletter slot', tier: 3 },
+  { n: 30, brand: 'Adaptive Security', signal: 'Secondary newsletter slot', tier: 3 },
+];
 ---
 
 <Base
-  title="Sample entries — Zeurion sponsor prospecting report"
+  title="Sample entries · Zeurion sponsor prospecting report"
   description="Three full entries from a real Zeurion report, prepared for a cybersecurity newsletter with ~15,000 subscribers. Dated evidence, contact, and a ready-to-send pitch per brand."
 >
   <main class="container">
@@ -111,7 +144,32 @@ import Base from '../layouts/Base.astro';
       </blockquote>
     </article>
 
-    <p><a class="btn" href="/#buy">Get your own report — €349</a></p>
+    <section aria-labelledby="full-list-title">
+      <h2 id="full-list-title">The full 30-brand list from this report</h2>
+      <p class="note">
+        Every brand below was observed paying for sponsorships on audiences comparable to
+        the client's, between April and July 2026. The full report adds, for each: the
+        dated evidence links, the named contact with sources and email status, and the
+        written pitch. Tier 1 means multiple recent placements across several titles.
+      </p>
+      <table>
+        <thead>
+          <tr><th scope="col">#</th><th scope="col">Brand</th><th scope="col">Observed signal</th><th scope="col">Tier</th></tr>
+        </thead>
+        <tbody>
+          {fullList.map((r) => (
+            <tr>
+              <td class="mono">{r.n}</td>
+              <td class="brand-cell">{r.brand}</td>
+              <td class="signal">{r.signal}</td>
+              <td class="mono">T{r.tier}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </section>
+
+    <p><a class="btn" href="/#buy">Get your own report · €349</a></p>
   </main>
 </Base>
 
@@ -139,4 +197,25 @@ import Base from '../layouts/Base.astro';
   }
   blockquote .mono { font-size: 0.85rem; margin-bottom: 0.5rem; color: var(--ink); }
   main > p:last-child { margin: 2rem 0; }
+  section { margin-top: 3rem; }
+  section h2 { margin-bottom: 0.5rem; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    overflow: hidden;
+    font-size: 0.95rem;
+  }
+  th, td { text-align: left; padding: 0.55rem 0.8rem; border-bottom: 1px solid var(--line); }
+  th { font-family: var(--font-display); font-size: 0.85rem; background: var(--muted); }
+  tr:last-child td { border-bottom: none; }
+  .brand-cell { font-weight: 600; white-space: nowrap; }
+  .signal { color: var(--ink-soft); }
+  td.mono { font-size: 0.8rem; color: var(--ink-soft); }
+  @media (max-width: 720px) {
+    table { font-size: 0.85rem; }
+    th:first-child, td:first-child { display: none; }
+  }
 </style>
