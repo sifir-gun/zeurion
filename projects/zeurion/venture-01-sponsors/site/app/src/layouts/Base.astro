@@ -24,6 +24,15 @@ const { title, description } = Astro.props;
     />
   </head>
   <body>
+    <header class="site-head">
+      <div class="container head-inner">
+        <a class="wordmark" href="/">zeurion<span class="accent-dot">.</span></a>
+        <nav aria-label="Main">
+          <a href="/sample">Sample</a>
+          <a href="/#buy" class="head-cta">€349</a>
+        </nav>
+      </div>
+    </header>
     <slot />
     <footer>
       <div class="container footer-inner">
@@ -40,6 +49,47 @@ const { title, description } = Astro.props;
 </html>
 
 <style>
+  .site-head {
+    border-bottom: 1px solid var(--line);
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(8px);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .head-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0.85rem;
+    padding-bottom: 0.85rem;
+  }
+  .wordmark {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.2rem;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .accent-dot { color: var(--accent); }
+  .site-head nav { display: flex; align-items: center; gap: 1.5rem; }
+  .site-head nav a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    font-size: 0.95rem;
+  }
+  .site-head nav a:hover { color: var(--accent); }
+  .head-cta {
+    font-family: var(--font-mono);
+    border: 1.5px solid var(--accent);
+    color: var(--accent) !important;
+    border-radius: 6px;
+    padding: 0.25rem 0.7rem;
+    font-size: 0.85rem !important;
+  }
+  .head-cta:hover { background: var(--accent); color: var(--accent-ink) !important; }
+
   footer {
     border-top: 1px solid var(--line);
     margin-top: 5rem;

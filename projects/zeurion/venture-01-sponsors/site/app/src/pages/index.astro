@@ -73,16 +73,27 @@ const faq = [
         Prepared for a cybersecurity newsletter with ~15,000 subscribers. The operator's
         identity stays private, exactly as yours will.
       </p>
-      <div class="inbox" role="list">
-        {inboxRows.map((row) => (
-          <div class="row" role="listitem">
-            <span class={`dot ${row.tier === 1 ? 'full' : ''}`} aria-hidden="true"></span>
-            <span class="brand">{row.brand}</span>
-            <span class="subject">{row.subject}</span>
-            <span class="tag mono">{row.tag}</span>
-            <span class="date mono">{row.date}</span>
+      <div class="inbox-window">
+        <div class="inbox-bar">
+          <span class="traffic" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="mono inbox-label">inbox · sponsor-opportunities</span>
+          <span class="pill mono">30 unread</span>
+        </div>
+        <div class="inbox" role="list">
+          {inboxRows.map((row) => (
+            <div class="row" role="listitem">
+              <span class={`dot ${row.tier === 1 ? 'full' : ''}`} aria-hidden="true"></span>
+              <span class="brand">{row.brand}</span>
+              <span class="subject">{row.subject}</span>
+              <span class="tag mono">{row.tag}</span>
+              <span class="date mono">{row.date}</span>
+            </div>
+          ))}
+          <div class="row more" role="listitem">
+            <span class="dot" aria-hidden="true" style="visibility:hidden"></span>
+            <span class="subject mono">+ 24 more in the full report</span>
           </div>
-        ))}
+        </div>
       </div>
       <p class="stats mono">
         103 dated observations · 14+ sources scanned · every claim linked to a public source
@@ -148,19 +159,48 @@ const faq = [
 </Base>
 
 <style>
-  .hero { padding: 5.5rem 0 4rem; }
+  .hero { padding: 4.5rem 0 3.5rem; }
+  .hero h1 { max-width: 16ch; }
   .eyebrow { color: var(--accent); font-size: 0.875rem; margin-bottom: 1rem; }
   .sub { color: var(--ink-soft); max-width: 44rem; margin: 1.25rem 0 2rem; font-size: 1.1rem; }
 
   section { padding: 3.5rem 0 0; }
   .section-note { color: var(--ink-soft); margin: 0.75rem 0 1.5rem; max-width: 44rem; }
 
-  .inbox {
-    background: var(--surface);
+  .inbox-window {
     border: 1px solid var(--line);
-    border-radius: 10px;
+    border-radius: 12px;
     overflow: hidden;
+    background: var(--surface);
+    box-shadow: 0 12px 32px -18px rgba(22, 24, 29, 0.25);
   }
+  .inbox-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    padding: 0.6rem 1rem;
+    background: var(--muted);
+    border-bottom: 1px solid var(--line);
+  }
+  .traffic { display: flex; gap: 0.35rem; }
+  .traffic i {
+    width: 0.6rem; height: 0.6rem;
+    border-radius: 50%;
+    background: var(--line);
+    display: block;
+  }
+  .inbox-label { font-size: 0.8rem; color: var(--ink-soft); }
+  .pill {
+    margin-left: auto;
+    font-size: 0.72rem;
+    background: var(--accent);
+    color: var(--accent-ink);
+    border-radius: 999px;
+    padding: 0.15rem 0.6rem;
+  }
+  .inbox { background: var(--surface); }
+  .row.more { grid-template-columns: 1rem 1fr; }
+  .row.more .subject { color: var(--accent); font-size: 0.85rem; }
   .row {
     display: grid;
     grid-template-columns: 1rem 11rem 1fr auto auto;
@@ -187,18 +227,29 @@ const faq = [
   .offer-list { padding-left: 1.2rem; display: grid; gap: 0.75rem; margin: 1.25rem 0 2rem; }
   .steps { padding-left: 1.2rem; display: grid; gap: 0.5rem; margin-top: 1rem; color: var(--ink-soft); }
 
-  .pricing { text-align: left; }
-  .price { font-family: var(--font-display); font-size: 2rem; font-weight: 700; margin: 0.5rem 0; }
+  .pricing {
+    background: var(--ink);
+    color: #f4f6f9;
+    margin-top: 4.5rem;
+    padding: 4rem 0;
+  }
+  .pricing h2 { color: #ffffff; }
+  .pricing .section-note { color: #a6adbb; }
+  .price { font-family: var(--font-display); font-size: 2.4rem; font-weight: 700; margin: 0.5rem 0; color: #ffffff; }
   .price .mono { font-family: var(--font-mono); }
   .roi {
-    background: var(--muted);
+    background: rgba(255, 255, 255, 0.06);
     border-left: 3px solid var(--accent);
     border-radius: 0 8px 8px 0;
     padding: 0.85rem 1.1rem;
-    color: var(--ink-soft);
+    color: #c9cfd9;
     max-width: 44rem;
     margin: 0 0 1.5rem;
   }
+  .pricing .btn { background: var(--accent); }
+  .pricing .btn:hover { background: #3563e9; }
+  .pricing .guarantee { color: #a6adbb; }
+  .pricing .guarantee a { color: #9db8ff; }
   .guarantee { color: var(--ink-soft); font-size: 0.9rem; margin-top: 0.9rem; max-width: 40rem; }
 
   .faq details {
@@ -211,5 +262,7 @@ const faq = [
   @media (max-width: 720px) {
     .row { grid-template-columns: 1rem 1fr auto; }
     .subject, .date { display: none; }
+    .row.more { grid-template-columns: 1rem 1fr; }
+    .row.more .subject { display: block; }
   }
 </style>

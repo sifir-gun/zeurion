@@ -41,3 +41,10 @@ Le composant « inbox row » : une ligne par sponsor avec pastille (pleine = tie
 ### Modes
 
 V1 : clair uniquement (l'inbox de référence est claire). Le sombre attendra une vraie demande.
+
+## Révision v1.1 (2026-07-21, après retour de Guney sur la timidité du design)
+
+- Header sticky avec wordmark « zeurion. » (point en accent) et CTA mono encadré.
+- La signature s'assume : l'inbox est rendue comme une fenêtre d'application mail (barre avec pastilles, libellé mono « inbox · sponsor-opportunities », compteur « 30 unread » en pilule accent, ombre portée douce, ligne « + 24 more in the full report »).
+- Échelle typographique relevée : h1 jusqu'à 3,6rem, h2 jusqu'à 2,1rem.
+- Un seul moment de contraste : la section prix passe en bande sombre pleine largeur (fond --ink, texte clair), le reste de la page reste clair. C'est l'unique inversion autorisée.
