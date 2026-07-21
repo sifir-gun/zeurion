@@ -31,6 +31,7 @@ Compétences disponibles :
 - audit-niche-reddit : audit manuel de niche Reddit pour la phase 0 Zeurion
 - generation-skill-md : créer une nouvelle compétence à partir d'un flux de travail décrit
 - post-mortem-venture : post-mortem structuré d'une venture arrêtée
+- site-venture : construire et mettre en ligne le site d'une venture (landing, SEO programmatique, checkout, légal)
 
 Backlog (candidats récurrents à formaliser quand ils reviennent) : conception de workflows n8n, specs d'architecture, schémas SQL, veille outils IA.
 
