@@ -33,6 +33,8 @@ Compétences disponibles :
 - post-mortem-venture : post-mortem structuré d'une venture arrêtée
 - site-venture : construire et mettre en ligne le site d'une venture (landing, SEO programmatique, checkout, légal)
 
+Compétences tierces installées (design, code audité avant installation le 2026-07-21) : ui-ux-pro-max (système de design par recherche locale), frontend-design (direction artistique, officiel Anthropic), web-design-guidelines (audit UI, télécharge ses règles à l'usage depuis le repo Vercel).
+
 Backlog (candidats récurrents à formaliser quand ils reviennent) : conception de workflows n8n, specs d'architecture, schémas SQL, veille outils IA.
 
 ## Journal de décisions
