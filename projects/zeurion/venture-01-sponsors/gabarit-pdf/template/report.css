@@ -1,0 +1,389 @@
+/* Gabarit PDF de livraison, système « Salle de tri ».
+   Source des tokens : ../site/design-system.md. Ne pas dériver sans décision consignée.
+   Les polices sont injectées par build.mjs en data URI (voir template/fonts/). */
+
+:root {
+  --bg: #fafbfc;
+  --surface: #ffffff;
+  --ink: #16181d;
+  --ink-soft: #4b5563;
+  --accent: #1d4ed8;
+  --accent-ink: #ffffff;
+  --line: #e5e8ec;
+  --muted: #f1f3f6;
+  --ok: #047857;
+  --priority: #dc2626;
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+}
+
+* { box-sizing: border-box; margin: 0; }
+
+/* En print, la page reste blanche : le --bg du site créerait un panneau
+   visible contre les marges. Les fonds muted/surface des cartes suffisent. */
+html, body {
+  background: #ffffff;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 9.75pt;
+  line-height: 1.55;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+p { margin: 0 0 7pt; orphans: 3; widows: 3; }
+strong { font-weight: 600; }
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.content a[href^="http"] {
+  font-family: var(--font-mono);
+  font-size: 0.86em;
+  word-break: break-all;
+}
+
+/* ---------- Couverture ---------- */
+
+.cover {
+  display: flex;
+  flex-direction: column;
+  page-break-after: always;
+}
+
+.cover-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 10pt;
+}
+
+.wordmark {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 15pt;
+  letter-spacing: -0.02em;
+}
+.wordmark .dot { color: var(--accent); }
+
+.cover-kicker {
+  font-family: var(--font-mono);
+  font-size: 7.5pt;
+  color: var(--ink-soft);
+  letter-spacing: 0.06em;
+}
+
+.cover-window {
+  width: 62%;
+  margin-top: 64pt;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.cover-window-bar {
+  display: flex;
+  align-items: center;
+  gap: 6pt;
+  background: var(--muted);
+  border-bottom: 1px solid var(--line);
+  padding: 5pt 9pt;
+}
+.cover-window-bar .dots { display: flex; gap: 3pt; }
+.cover-window-bar .dots span {
+  width: 5pt; height: 5pt;
+  border-radius: 50%;
+  background: var(--line);
+  display: block;
+}
+.cover-window-bar .label {
+  font-family: var(--font-mono);
+  font-size: 7pt;
+  color: var(--ink-soft);
+}
+.cover-window-row {
+  display: flex;
+  align-items: center;
+  gap: 8pt;
+  padding: 8pt 9pt;
+}
+.pill {
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-family: var(--font-mono);
+  font-size: 7.5pt;
+  font-weight: 500;
+  border-radius: 99px;
+  padding: 1.5pt 7pt;
+  white-space: nowrap;
+}
+.cover-window-row .note {
+  font-family: var(--font-mono);
+  font-size: 7.5pt;
+  color: var(--ink-soft);
+}
+
+.cover h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 25pt;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  margin: 26pt 0 14pt;
+  max-width: 92%;
+}
+
+.cover-meta {
+  color: var(--ink-soft);
+  font-size: 9.5pt;
+  max-width: 82%;
+}
+
+.cover-bottom {
+  margin-top: auto;
+  border-top: 1px solid var(--line);
+  padding-top: 9pt;
+  display: flex;
+  justify-content: space-between;
+  gap: 18pt;
+  font-family: var(--font-mono);
+  font-size: 7.5pt;
+  color: var(--ink-soft);
+}
+
+/* ---------- Corps ---------- */
+
+.content { counter-reset: sec; }
+
+.content h1 {
+  break-before: page;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 21pt;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 0 12pt;
+  padding-top: 40pt;
+}
+.content h1::before {
+  content: '';
+  display: block;
+  width: 26pt;
+  border-top: 3px solid var(--accent);
+  margin-bottom: 12pt;
+}
+
+.content h2 {
+  break-before: page;
+  break-after: avoid;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14.5pt;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin: 0 0 9pt;
+}
+.content h1 + h2 { break-before: auto; margin-top: 16pt; }
+
+/* Bascules de tier : page de partie assumée (filet accent, gros titre, pas de compteur) */
+.content h2.part {
+  padding-top: 40pt;
+  font-size: 19pt;
+}
+.content h2.part::before {
+  counter-increment: none;
+  content: '';
+  display: block;
+  width: 26pt;
+  border-top: 3px solid var(--accent);
+  margin-bottom: 12pt;
+}
+.content h1 + h2.part { padding-top: 0; font-size: 14.5pt; }
+.content h1 + h2.part::before { content: none; }
+
+.content h2::before {
+  counter-increment: sec;
+  content: counter(sec, decimal-leading-zero);
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 7.5pt;
+  font-weight: 500;
+  color: var(--accent);
+  letter-spacing: 0.12em;
+  margin-bottom: 4pt;
+}
+
+/* Ligne d'inbox : l'en-tête de chaque fiche sponsor */
+h3.sponsor {
+  break-before: page;
+  break-after: avoid;
+  display: flex;
+  align-items: baseline;
+  gap: 8pt;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 7pt;
+  margin: 0 0 9pt;
+}
+h3.sponsor .row-dot {
+  width: 6pt; height: 6pt;
+  border-radius: 50%;
+  align-self: center;
+  background: var(--accent);
+  flex: none;
+}
+h3.sponsor.tier-2 .row-dot,
+h3.sponsor.tier-3 .row-dot {
+  background: transparent;
+  border: 1.2pt solid var(--accent);
+}
+h3.sponsor .num {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 8.5pt;
+  color: var(--ink-soft);
+}
+h3.sponsor .name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 13.5pt;
+  letter-spacing: -0.02em;
+}
+h3.sponsor .flag {
+  margin-left: auto;
+  align-self: center;
+  width: 9pt; height: 9pt;
+  color: var(--priority);
+}
+
+/* h3 hors fiches sponsors (au cas où) */
+.content h3:not(.sponsor) {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 12pt;
+  letter-spacing: -0.02em;
+  margin: 12pt 0 6pt;
+  break-after: avoid;
+}
+
+/* Étiquettes de champ : « Why they'll sponsor you », « Who to contact »... */
+p.field { margin-top: 9pt; }
+.field-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 7.5pt;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: 2pt;
+}
+
+/* ---------- Cartes email (pitchs et relances) ---------- */
+
+blockquote {
+  border-left: 2pt solid var(--accent);
+  padding: 2pt 0 2pt 10pt;
+  margin: 8pt 0;
+  color: var(--ink-soft);
+}
+
+blockquote.mail {
+  break-inside: avoid;
+  border: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--surface);
+  padding: 0;
+  margin: 8pt 0 10pt;
+  color: var(--ink);
+}
+.mail-subject {
+  display: flex;
+  align-items: baseline;
+  gap: 7pt;
+  background: var(--muted);
+  border-bottom: 1px solid var(--line);
+  border-radius: 6px 6px 0 0;
+  padding: 6pt 10pt;
+  font-weight: 600;
+  font-size: 9.5pt;
+}
+.mail-subject-label {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 7pt;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink-soft);
+  flex: none;
+}
+blockquote.mail > p {
+  font-size: 9pt;
+  margin: 7pt 10pt;
+}
+
+/* ---------- Tableaux ---------- */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 9pt 0 11pt;
+  break-inside: avoid;
+}
+th {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 7pt;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+  text-align: left;
+  border-bottom: 1.5pt solid var(--ink);
+  padding: 4pt 8pt 4pt 0;
+}
+td {
+  font-size: 8.5pt;
+  border-bottom: 1px solid var(--line);
+  padding: 5pt 8pt 5pt 0;
+  vertical-align: top;
+}
+td a[href^="http"] { font-size: 7.5pt; }
+
+/* ---------- Listes, séparateurs ---------- */
+
+ul, ol { margin: 0 0 8pt; padding-left: 14pt; }
+li { margin-bottom: 3.5pt; }
+li::marker { color: var(--ink-soft); }
+ol li::marker { font-family: var(--font-mono); font-size: 8.5pt; }
+
+hr {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 12pt 0;
+}
+/* Les --- du markdown encadrent la bascule de partie : les sauts de page suffisent */
+.content > hr { display: none; }
+
+/* ---------- Colophon ---------- */
+
+.colophon {
+  margin-top: 22pt;
+  border-top: 1px solid var(--line);
+  padding-top: 10pt;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 18pt;
+  break-inside: avoid;
+}
+.colophon .wordmark { font-size: 11pt; }
+.colophon .colophon-note {
+  font-family: var(--font-mono);
+  font-size: 7.5pt;
+  color: var(--ink-soft);
+  text-align: right;
+  max-width: 70%;
+}

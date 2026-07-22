@@ -28,4 +28,4 @@ Contraintes : acquisition en liste blanche uniquement pour tout ce qui sera auto
 
 ## Références
 
-Audit : projects/zeurion/niches/sponsors-newsletters-audit.md (+ 3 rapports de recherche). Journal des gestes : projects/zeurion/phase-0-journal.md.
+Audit : projects/zeurion/niches/sponsors-newsletters-audit.md (+ 3 rapports de recherche). Journal des gestes : projects/zeurion/phase-0-journal.md. Gabarit PDF de livraison : gabarit-pdf/ (markdown vers PDF au design Salle de tri).

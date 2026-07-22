@@ -1,0 +1,13 @@
+{
+  "name": "zeurion-gabarit-pdf",
+  "private": true,
+  "type": "module",
+  "description": "Gabarit PDF de livraison du rapport sponsors, design Salle de tri",
+  "scripts": {
+    "build": "node build.mjs"
+  },
+  "dependencies": {
+    "marked": "^16.0.0",
+    "puppeteer-core": "^24.0.0"
+  }
+}
