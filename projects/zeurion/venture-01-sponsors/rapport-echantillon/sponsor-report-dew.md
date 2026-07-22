@@ -69,6 +69,26 @@ One data point to add yourself before pitching: your open rate. Your peers publi
 
 Two follow-ups, then stop. The audience you are selling to (marketing leaders in security) is oversolicited; restraint is a signal.
 
+## Your first 14 days: how to run this list
+
+Thirty pitches is ammunition, not a plan. Here is the plan.
+
+**Day 0, before anything**: run every address marked "verify before sending" through an email verification tool (statuses are in the contacts CSV; nothing in this report was guessed, but only "published" addresses have a public source). Pull your open rate from your dashboard and drop your real numbers into the pitch placeholders. Fifteen minutes that protect your sender reputation and your credibility.
+
+**Days 1-2, the three recommended calls**: send Tines, Sublime Security, and Nebulock first, exactly as pitched. One email at a time, from your normal address, no sequencing tool: at this volume, tools add risk and remove warmth.
+
+**Days 3-5, the rest of tier 1**: three to four sends a day, not more. Small batches keep quality up and let you fold what you learn into the next sends. Before each send, re-read the entry's caveats: contact data ages fast in this segment, and two tier-1 brands carry acquisition caveats.
+
+**Follow-up windows**: day +4 and day +10 per thread, using the two templates above, then stop. Restraint is part of the pitch.
+
+**Days 6-10, tier 2**: same rhythm. If a slot gets booked meanwhile, update your later pitches with the real availability; scarcity is only an argument when it is true.
+
+**Days 11-14, tier 3 and replies**: send tier 3 in the same batches. Any reply asking for details gets your one-pager (the five media kit numbers, formats, prices, open dates) the same day. A "not this quarter" gets a circle-back date in your tracker, not a rebuttal.
+
+**Track it in the CSV**: add columns for status, sent date, follow-up dates, and reply. The CSV is your pipeline; twenty minutes of bookkeeping a week keeps the whole cycle honest.
+
+**What a good first cycle looks like**: the realistic goal of cycle one is conversations, not signatures: replies, a call or two, a slot pencilled in. Most of the thirty will not answer, which is why there are thirty. Your list, your pacing; but do not let a quiet week push you into blasting the remainder in one afternoon.
+
 ## Limits and caveats, stated plainly
 
 - Every non-published email must be verified with a verification tool before sending. Verified-published addresses are flagged in each entry.
