@@ -1,0 +1,81 @@
+---
+import Base from '../../layouts/Base.astro';
+import data from '../../data/verticals.json';
+
+const verticals = data.verticals;
+---
+
+<Base
+  title="Who sponsors newsletters, by vertical · zeurion.ai"
+  description="Observed newsletter and podcast sponsors by vertical: cybersecurity, data engineering, health tech, climate, finance. Dated, linked evidence for every placement."
+>
+  <main class="container">
+    <p class="mono eyebrow">Free data · updated July 2026</p>
+    <h1>Who sponsors newsletters, by vertical</h1>
+    <p class="note">
+      Brands observed paying for newsletter and podcast sponsorships, with dated, linked
+      evidence for every placement. Pick your vertical. If yours is missing, the full
+      report covers any niche that passes the fit check.
+    </p>
+
+    <div class="grid" role="list">
+      {verticals.map((v) => (
+        <a class="card" href={`/who-sponsors/${v.slug}`} role="listitem">
+          <span class="card-title">{v.name}</span>
+          <span class="card-meta mono">{v.sponsors.length} brands · {v.depth === 'deep' ? 'deep scan' : 'light scan'} · {v.updated}</span>
+        </a>
+      ))}
+    </div>
+
+    <section class="cta-block">
+      <h2>Your newsletter, your 30 brands</h2>
+      <p class="soft">
+        These pages are the free, vertical-level view. The Zeurion report is built for one
+        newsletter: 30 brands matched to your audience, the contact who owns each budget,
+        and a ready-to-send pitch per brand.
+      </p>
+      <a class="btn" href="/#buy">See the report · €349</a>
+    </section>
+  </main>
+</Base>
+
+<style>
+  main { padding-top: 3.5rem; }
+  .eyebrow { font-size: 0.875rem; color: var(--accent); margin-bottom: 1rem; }
+  .note { color: var(--ink-soft); max-width: 44rem; margin: 1rem 0 2rem; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1rem;
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 1.1rem 1.25rem;
+    text-decoration: none;
+    transition: border-color 180ms ease, transform 180ms ease;
+  }
+  .card:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .card-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--ink);
+    text-transform: capitalize;
+  }
+  .card-meta { font-size: 0.78rem; color: var(--ink-soft); }
+  .cta-block {
+    margin-top: 3rem;
+    background: var(--muted);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 1.5rem 1.75rem;
+  }
+  .cta-block h2 { font-size: 1.35rem; margin-bottom: 0.6rem; }
+  .soft { color: var(--ink-soft); max-width: 44rem; }
+  .cta-block .btn { margin-top: 0.75rem; }
+</style>

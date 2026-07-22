@@ -4,7 +4,7 @@ import data from '../data/verticals.json';
 const SITE = 'https://www.zeurion.ai';
 
 export const GET: APIRoute = () => {
-  const staticPages = ['/', '/sample', '/calculator', '/legal', '/terms', '/privacy'];
+  const staticPages = ['/', '/sample', '/calculator', '/who-sponsors/', '/legal', '/terms', '/privacy'];
   const verticalPages = data.verticals.map((v) => `/who-sponsors/${v.slug}`);
   const urls = [...staticPages, ...verticalPages]
     .map((p) => `  <url><loc>${SITE}${p}</loc></url>`)

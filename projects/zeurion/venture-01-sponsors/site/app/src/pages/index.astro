@@ -1,5 +1,8 @@
 ---
 import Base from '../layouts/Base.astro';
+import verticalsData from '../data/verticals.json';
+
+const verticals = verticalsData.verticals;
 
 // Lien de paiement Stripe : à renseigner par Guney depuis le dashboard Stripe.
 // Tant qu'il est vide, le bouton d'achat est désactivé (vente bloquée : pages
@@ -106,6 +109,15 @@ const faq = [
         103 dated observations · 14+ sources scanned · every claim linked to a public source
       </p>
       <p><a href="/sample">Read three full entries from the sample →</a></p>
+
+      <div class="verticals">
+        <p class="verticals-label">Browse observed sponsors in your vertical, free:</p>
+        <p class="verticals-links">
+          {verticals.map((v) => (
+            <a class="chip" href={`/who-sponsors/${v.slug}`}>{v.name}<span class="mono chip-count"> {v.sponsors.length}</span></a>
+          ))}
+        </p>
+      </div>
     </div>
   </section>
 
@@ -241,6 +253,25 @@ const faq = [
   .tag { font-size: 0.72rem; background: var(--muted); border: 1px solid var(--line); border-radius: 4px; padding: 0.1rem 0.4rem; }
   .date { font-size: 0.8rem; color: var(--ink-soft); }
   .stats { color: var(--ink-soft); font-size: 0.85rem; margin: 1.25rem 0 0.5rem; }
+  .verticals { margin-top: 1.75rem; }
+  .verticals-label { color: var(--ink-soft); font-size: 0.9rem; margin-bottom: 0.6rem; }
+  .verticals-links { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+  .chip {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.15rem;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 0.35rem 0.9rem;
+    font-size: 0.9rem;
+    color: var(--ink);
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: border-color 180ms ease;
+  }
+  .chip:hover { border-color: var(--accent); color: var(--accent); }
+  .chip-count { font-size: 0.75rem; color: var(--ink-soft); }
 
   .offer-list { padding-left: 1.2rem; display: grid; gap: 0.75rem; margin: 1.25rem 0 2rem; }
   .steps { padding-left: 1.2rem; display: grid; gap: 0.5rem; margin-top: 1rem; color: var(--ink-soft); }
