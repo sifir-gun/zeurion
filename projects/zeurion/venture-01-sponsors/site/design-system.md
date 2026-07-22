@@ -55,3 +55,13 @@ V1 : clair uniquement (l'inbox de référence est claire). Le sombre attendra un
 - Scroll reveal subtil sur les sections (opacity + 12px, 350ms, une seule fois, IntersectionObserver), conforme au preset « Scroll Reveal (Subtle) » de ui-ux-pro-max. Dégradation propre : sans JS tout est visible, prefers-reduced-motion désactive tout.
 - Rythme de page : la section offre passe sur fond --muted (bande bordée), créant l'alternance clair / gris / clair / sombre.
 - Typo : paires alternatives évaluées via le domaine typography (Fira Code/Sans, Space Mono), rejetées : Space Grotesk + Inter + IBM Plex Mono reste plus adapté au concept.
+
+## Révision v1.3 (2026-07-22, après comparaison hero contre hero avec SponsorGap)
+
+Constat déclencheur : le hero une colonne laissait la moitié droite de l'écran vide et la preuve signature (l'inbox) sous le pli. Corrections, sans rien céder sur la sobriété :
+
+- Hero deux colonnes : texte à gauche, fenêtre d'inbox à droite, au-dessus du pli. Conteneur du hero élargi à 1120px (le reste du site garde 880px). Sous 1024px, empilement.
+- La section « From the sample report » est absorbée par le hero (légende mono au-dessus de la fenêtre, ligne de stats et lien sample en dessous) ; la bande des verticales reste une section propre.
+- Arrivée du courrier : les lignes de l'inbox du hero apparaissent une à une (250ms, décalage 70ms, une seule fois au chargement). Extension du scroll reveal v1.2, même dégradation : sans JS tout est visible, prefers-reduced-motion désactive tout. Le badge « 30 unread » reste statique (l'interdit des compteurs animés tient).
+- Micro-copy mono sous le CTA : « delivered in 5 business days · pdf + csv of contacts ». Factuel, aligné sur la spec du livrable.
+- Identité hors page : favicon « z. » (fond ink, point accent, PNG 512/192/32 + apple-touch) et image Open Graph 1200x630 au motif inbox, générées par site/generate-brand-assets.mjs, balises OG/Twitter dans Base.astro. Les aperçus de lien (annuaires, réseaux) portent désormais le design system.

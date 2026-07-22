@@ -51,65 +51,65 @@ const faq = [
   description="A one-time prospecting report for niche B2B newsletter operators: 30 brands with dated proof they sponsor your peers, the right contact, and a ready-to-send pitch for each. €349, no commission."
 >
   <header class="hero">
-    <div class="container">
-      <p class="mono eyebrow">Sponsor prospecting, done for you</p>
-      <h1>30 brands already sponsoring newsletters like yours.</h1>
-      <p class="sub">
-        A one-time report for niche B2B newsletter operators (2,000 to 50,000 subscribers):
-        who is actively buying sponsorships in your vertical, who owns that budget, and a
-        ready-to-send pitch for each brand. No commission, no marketplace, no retainer.
-      </p>
-      {STRIPE_PAYMENT_LINK
-        ? <a class="btn" href={STRIPE_PAYMENT_LINK}>Get your report · €349</a>
-        : <a class="btn" href="mailto:contact@zeurion.ai?subject=Notify%20me%20when%20checkout%20opens">Opening soon at €349 · get notified</a>}
-      <p class="guarantee">
-        Fit check first: if your newsletter isn't right for the method, we say so and
-        refund in full before any work starts. <a href="/terms">Terms</a>
-      </p>
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <p class="mono eyebrow">Sponsor prospecting, done for you</p>
+        <h1>30 brands already sponsoring newsletters like yours.</h1>
+        <p class="sub">
+          A one-time report for niche B2B newsletter operators (2,000 to 50,000 subscribers):
+          who is actively buying sponsorships in your vertical, who owns that budget, and a
+          ready-to-send pitch for each brand. No commission, no marketplace, no retainer.
+        </p>
+        {STRIPE_PAYMENT_LINK
+          ? <a class="btn" href={STRIPE_PAYMENT_LINK}>Get your report · €349</a>
+          : <a class="btn" href="mailto:contact@zeurion.ai?subject=Notify%20me%20when%20checkout%20opens">Opening soon at €349 · get notified</a>}
+        <p class="cta-note mono">delivered in 5 business days · pdf + csv of contacts</p>
+        <p class="guarantee">
+          Fit check first: if your newsletter isn't right for the method, we say so and
+          refund in full before any work starts. <a href="/terms">Terms</a>
+        </p>
+      </div>
+      <div class="hero-proof">
+        <p class="proof-caption mono">sample report · cybersecurity · ~15k subscribers · anonymized</p>
+        <div class="inbox-window">
+          <div class="inbox-bar">
+            <span class="traffic" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="mono inbox-label">inbox · sponsor-opportunities</span>
+            <span class="pill mono">30 unread</span>
+          </div>
+          <div class="inbox" role="list">
+            {inboxRows.map((row, i) => (
+              <div class="row" role="listitem" style={`--i: ${i}`}>
+                <span class={`dot ${row.tier === 1 ? 'full' : ''}`} aria-hidden="true"></span>
+                <span class="brand">{row.brand}</span>
+                <span class="subject">{row.subject}</span>
+                <span class="flag-slot">
+                  {row.tier === 1 && (
+                    <svg class="flag" viewBox="0 0 16 16" width="13" height="13" aria-label="Priority" role="img">
+                      <path d="M3 1v14M3 2h9l-2.5 3L12 8H3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  )}
+                </span>
+                <span class="tag mono">{row.tag}</span>
+                <span class="date mono">{row.date}</span>
+              </div>
+            ))}
+            <div class="row more" role="listitem" style={`--i: ${inboxRows.length}`}>
+              <span class="dot" aria-hidden="true" style="visibility:hidden"></span>
+              <span class="subject mono">+ 24 more in the full report</span>
+            </div>
+          </div>
+        </div>
+        <p class="stats mono">
+          103 dated observations · 14+ sources · every claim publicly sourced
+        </p>
+        <p class="proof-link"><a href="/sample">Read three full entries from the sample →</a></p>
+      </div>
     </div>
   </header>
 
-  <section class="proof reveal" aria-labelledby="proof-title">
+  <section class="proof reveal" aria-label="Free vertical pages">
     <div class="container">
-      <h2 id="proof-title">From the sample report</h2>
-      <p class="section-note">
-        Prepared for a cybersecurity newsletter with ~15,000 subscribers. The operator's
-        identity stays private, exactly as yours will.
-      </p>
-      <div class="inbox-window">
-        <div class="inbox-bar">
-          <span class="traffic" aria-hidden="true"><i></i><i></i><i></i></span>
-          <span class="mono inbox-label">inbox · sponsor-opportunities</span>
-          <span class="pill mono">30 unread</span>
-        </div>
-        <div class="inbox" role="list">
-          {inboxRows.map((row) => (
-            <div class="row" role="listitem">
-              <span class={`dot ${row.tier === 1 ? 'full' : ''}`} aria-hidden="true"></span>
-              <span class="brand">{row.brand}</span>
-              <span class="subject">{row.subject}</span>
-              <span class="flag-slot">
-                {row.tier === 1 && (
-                  <svg class="flag" viewBox="0 0 16 16" width="13" height="13" aria-label="Priority" role="img">
-                    <path d="M3 1v14M3 2h9l-2.5 3L12 8H3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                )}
-              </span>
-              <span class="tag mono">{row.tag}</span>
-              <span class="date mono">{row.date}</span>
-            </div>
-          ))}
-          <div class="row more" role="listitem">
-            <span class="dot" aria-hidden="true" style="visibility:hidden"></span>
-            <span class="subject mono">+ 24 more in the full report</span>
-          </div>
-        </div>
-      </div>
-      <p class="stats mono">
-        103 dated observations · 14+ sources scanned · every claim linked to a public source
-      </p>
-      <p><a href="/sample">Read three full entries from the sample →</a></p>
-
       <div class="verticals">
         <p class="verticals-label">Browse observed sponsors in your vertical, free:</p>
         <p class="verticals-links">
@@ -178,10 +178,47 @@ const faq = [
 </Base>
 
 <style>
-  .hero { padding: 4.5rem 0 3.5rem; }
-  .hero h1 { max-width: 16ch; }
+  .hero { padding: 4rem 0 3rem; }
+  .hero .container { max-width: 1120px; }
+  .hero-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+    gap: 3.5rem;
+    align-items: center;
+  }
+  .hero h1 { font-size: clamp(2.2rem, 3.4vw, 2.75rem); text-wrap: balance; }
   .eyebrow { color: var(--accent); font-size: 0.875rem; margin-bottom: 1rem; }
-  .sub { color: var(--ink-soft); max-width: 44rem; margin: 1.25rem 0 2rem; font-size: 1.1rem; }
+  .sub { color: var(--ink-soft); margin: 1.25rem 0 2rem; font-size: 1.05rem; }
+  .cta-note { color: var(--ink-soft); font-size: 0.8rem; margin-top: 0.8rem; }
+
+  .proof-caption { color: var(--ink-soft); font-size: 0.78rem; margin-bottom: 0.6rem; }
+  /* Variante hero : la date sort, l'objet respire (les dates restent sur /sample) */
+  .hero-proof .row { grid-template-columns: 1rem 8.5rem 1fr auto auto; gap: 0.7rem; padding: 0.7rem 0.9rem; font-size: 0.95rem; }
+  .hero-proof .row .date { display: none; }
+  .hero-proof .row.more { grid-template-columns: 1rem 1fr; }
+  .hero-proof .stats { margin: 0.9rem 0 0.4rem; font-size: 0.78rem; }
+  .proof-link { font-size: 0.9rem; }
+  .proof-link a { text-decoration: none; }
+  .proof-link a:hover { text-decoration: underline; }
+
+  /* Arrivée du courrier : stagger une fois au chargement, extension du
+     scroll reveal v1.2. Sans JS ou en reduced-motion, tout est visible. */
+  @media (prefers-reduced-motion: no-preference) {
+    :global(html.js) .hero-proof .row {
+      opacity: 0;
+      animation: row-in 250ms ease-out forwards;
+      animation-delay: calc(150ms + var(--i, 0) * 70ms);
+    }
+  }
+  @keyframes row-in {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: none; }
+  }
+
+  @media (max-width: 1024px) {
+    .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .hero-proof .row { grid-template-columns: 1rem 11rem 1fr auto auto auto; }
+  }
 
   section { padding: 3.5rem 0 0; }
   .section-note { color: var(--ink-soft); margin: 0.75rem 0 1.5rem; max-width: 44rem; }
@@ -253,6 +290,7 @@ const faq = [
   .tag { font-size: 0.72rem; background: var(--muted); border: 1px solid var(--line); border-radius: 4px; padding: 0.1rem 0.4rem; }
   .date { font-size: 0.8rem; color: var(--ink-soft); }
   .stats { color: var(--ink-soft); font-size: 0.85rem; margin: 1.25rem 0 0.5rem; }
+  .proof .verticals { margin-top: 0; }
   .verticals { margin-top: 1.75rem; }
   .verticals-label { color: var(--ink-soft); font-size: 0.9rem; margin-bottom: 0.6rem; }
   .verticals-links { display: flex; flex-wrap: wrap; gap: 0.6rem; }
@@ -309,9 +347,9 @@ const faq = [
   .faq details p { color: var(--ink-soft); margin-top: 0.6rem; max-width: 44rem; }
 
   @media (max-width: 720px) {
-    .row { grid-template-columns: 1rem 1fr auto; }
+    .row, .hero-proof .row { grid-template-columns: 1rem 1fr auto; }
     .subject, .date, .flag-slot { display: none; }
-    .row.more { grid-template-columns: 1rem 1fr; }
+    .row.more, .hero-proof .row.more { grid-template-columns: 1rem 1fr; }
     .row.more .subject { display: block; }
   }
 </style>

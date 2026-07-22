@@ -18,6 +18,22 @@ const verticals = verticalsData.verticals;
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
+    <meta name="theme-color" content="#fafbfc" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Zeurion" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={new URL(Astro.url.pathname, Astro.site)} />
+    <meta property="og:image" content={new URL('/og.png', Astro.site)} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL('/og.png', Astro.site)} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -43,8 +59,8 @@ const verticals = verticalsData.verticals;
         <a class="wordmark" href="/">zeurion<span class="accent-dot">.</span></a>
         <nav aria-label="Main">
           <a href="/sample">Sample</a>
-          <a href="/who-sponsors/">Verticals</a>
-          <a href="/calculator">Calculator</a>
+          <a href="/who-sponsors/" class="nav-secondary">Verticals</a>
+          <a href="/calculator" class="nav-secondary">Calculator</a>
           <a href="/#buy" class="head-cta">€349</a>
         </nav>
       </div>
@@ -88,6 +104,7 @@ const verticals = verticalsData.verticals;
     align-items: center;
     padding-top: 0.85rem;
     padding-bottom: 0.85rem;
+    max-width: 1120px; /* aligné sur le conteneur élargi du hero (v1.3) */
   }
   .wordmark {
     font-family: var(--font-display);
@@ -114,6 +131,11 @@ const verticals = verticalsData.verticals;
     font-size: 0.85rem !important;
   }
   .head-cta:hover { background: var(--accent); color: var(--accent-ink) !important; }
+  .site-head nav { flex-wrap: nowrap; }
+  @media (max-width: 560px) {
+    .site-head nav { gap: 0.9rem; }
+    .nav-secondary { display: none; } /* accessibles via footer et chips en page */
+  }
 
   footer {
     border-top: 1px solid var(--line);
