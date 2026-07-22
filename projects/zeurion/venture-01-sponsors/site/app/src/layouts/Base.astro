@@ -1,11 +1,13 @@
 ---
 import '../styles/global.css';
+import verticalsData from '../data/verticals.json';
 
 interface Props {
   title: string;
   description: string;
 }
 const { title, description } = Astro.props;
+const verticals = verticalsData.verticals;
 ---
 
 <!doctype html>
@@ -52,7 +54,9 @@ const { title, description } = Astro.props;
         <span class="mono footer-label">Free resources</span>
         <nav aria-label="Resources">
           <a href="/calculator">Sponsorship rate calculator</a>
-          <a href="/who-sponsors/cybersecurity">Who sponsors cybersecurity newsletters</a>
+          {verticals.map((v) => (
+            <a href={`/who-sponsors/${v.slug}`}>Who sponsors {v.name} newsletters</a>
+          ))}
         </nav>
       </div>
       <div class="container footer-inner">

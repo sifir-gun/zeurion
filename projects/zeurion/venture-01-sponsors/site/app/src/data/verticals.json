@@ -34,6 +34,106 @@
         { "label": "Vulnerable U: 32,000+ subscribers, ~44% open rate, two-tier packaging", "url": "https://www.vulnu.com/c/sponsors" },
         { "label": "Resilient Cyber: 31,287 subscribers, 46% open rate, featured slot + podcast interview", "url": "https://www.resilientcyber.io/sponsorships" }
       ]
+    },
+    {
+      "slug": "data-engineering",
+      "name": "data engineering",
+      "title": "Who sponsors data engineering newsletters (2026 data)",
+      "metaDescription": "Brands observed paying for data engineering newsletter and podcast sponsorships in June-July 2026, with dated, linked evidence, plus the vertical's only public rate card.",
+      "updated": "2026-07-22",
+      "depth": "light",
+      "intro": "Every brand below was observed paying for a sponsorship on a data engineering newsletter or podcast in June-July 2026. Each observation links to the issue or episode where it appeared. This is a lighter scan than our cybersecurity page; the full Zeurion report goes deeper for one specific newsletter.",
+      "sponsors": [
+        { "brand": "Dagster", "sells": "Data orchestration", "date": "2026-07-20", "format": "2 native blocks", "source": "Data Engineering Weekly #279", "url": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-279", "note": "Four consecutive issues, #276 through #279" },
+        { "brand": "Attio", "sells": "CRM", "date": "2026-07-18", "format": "Sponsored block", "source": "ByteByteGo", "url": "https://blog.bytebytego.com/p/mcp-vs-a2a-vs-acp-how-ai-agents-actually", "note": "Two placements in one week" },
+        { "brand": "Xweather", "sells": "Weather API", "date": "2026-07-18", "format": "Sponsored block", "source": "ByteByteGo", "url": "https://blog.bytebytego.com/p/mcp-vs-a2a-vs-acp-how-ai-agents-actually", "note": "" },
+        { "brand": "Datadog (with AWS)", "sells": "Observability", "date": "2026-07-14", "format": "Sponsored guide", "source": "ByteByteGo", "url": "https://blog.bytebytego.com/p/how-llms-learn-to-be-helpful-rlhf", "note": "" },
+        { "brand": "Render", "sells": "Cloud hosting", "date": "2026-07-11", "format": "Sponsored block + promo code", "source": "ByteByteGo EP221", "url": "https://blog.bytebytego.com/p/ep221-how-docker-works-under-the", "note": "" },
+        { "brand": "Matic", "sells": "Consumer robotics", "date": "2026-07-15", "format": "Sponsored block", "source": "ByteByteGo", "url": "https://blog.bytebytego.com/p/ai-customer-support-at-scale-the", "note": "Consumer brand buying a technical audience" },
+        { "brand": "DataDriven.io", "sells": "Data services", "date": "2026-06-18", "format": "Host-read spot", "source": "Data Engineering Podcast E512", "url": "https://www.dataengineeringpodcast.com/episodepage/holding-kafka-right-product-friendly-streaming-with-typestream", "note": "Two episodes in June" }
+      ],
+      "publishers": ["Data Engineering Weekly", "ByteByteGo", "SeattleDataGuy", "Data Engineering Podcast", "VuTrinh", "Ju Data Engineering"],
+      "benchmarks": [
+        { "label": "VuTrinh public media kit: $50 CPM, $450 per slot at ~10,000 subscribers, 4-slot bundle at $1,400", "url": "https://vutr.substack.com/p/media-kit" },
+        { "label": "Dutch Engineer: 7k+ subscribers, 45-50% open rate, rates on request", "url": "https://dutchengineer.substack.com/p/sponsor-dutch-engineer-newsletter" },
+        { "label": "Learn Analytics Engineering (adjacent vertical): rates on request, past sponsors listed", "url": "https://learnanalyticsengineering.substack.com/p/sponsorships" }
+      ]
+    },
+    {
+      "slug": "health-tech",
+      "name": "health tech",
+      "title": "Who sponsors health tech newsletters (2026 data)",
+      "metaDescription": "Brands observed paying for digital health newsletter sponsorships in 2026, with dated, linked evidence for each placement, across Out-Of-Pocket, Health Tech Nerds, Hospitalogy and more.",
+      "updated": "2026-07-22",
+      "depth": "light",
+      "intro": "Every brand below was observed paying for a sponsorship on a health tech newsletter in 2026, with a link to the exact issue. The buyers are B2B healthcare infrastructure vendors, not consumer brands. Notably, none of the independent newsletters in this vertical publish their rates, and inventory is scarce: Out-Of-Pocket capped sponsored posts at four per year and announced two slots left for the year in June.",
+      "sponsors": [
+        { "brand": "Redox", "sells": "EHR integration", "date": "2026-07-21", "format": "Opening banner", "source": "Out-Of-Pocket", "url": "https://www.outofpocket.health/p/smart-glasses-healthcare", "note": "Also co-branded a FHIR course with the same publisher" },
+        { "brand": "Medallion", "sells": "Clinician credentialing", "date": "2026-07-19", "format": "In-article banner", "source": "Healthcare Huddle", "url": "https://www.healthcarehuddle.com/p/clinical-ai-safety-what-the-noharm-study-reveals", "note": "Coordinated campaign: also sponsored Health Tech Nerds the week before, same event" },
+        { "brand": "Assured", "sells": "Credentialing", "date": "2026-07-19", "format": "Primary sponsor", "source": "Health Tech Nerds", "url": "https://www.healthtechnerds.com/p/weekly-health-tech-reads-7-19-26", "note": "" },
+        { "brand": "R1 (R1 RCM)", "sells": "Revenue cycle management", "date": "2026-07-13", "format": "Sponsored deep dive", "source": "Hospitalogy", "url": "https://hospitalogy.com/articles/2026-07-13/the-revenue-cycle-has-an-infrastructure-problem-r1-built-the-os-to-solve-it/", "note": "" },
+        { "brand": "Bunkerhill Health", "sells": "Clinical AI", "date": "2026-07-07", "format": "Opening banner", "source": "Out-Of-Pocket", "url": "https://www.outofpocket.health/p/starting-a-new-job-at-a-healthtech-company", "note": "" },
+        { "brand": "Predoc", "sells": "Patient chart retrieval", "date": "2026-06-29", "format": "Full sponsored post", "source": "Out-Of-Pocket", "url": "https://www.outofpocket.health/p/lets-solve-getting-patient-charts", "note": "Publisher announced 2 slots left for the year" },
+        { "brand": "Whereby", "sells": "Telehealth video", "date": "2026-06-23", "format": "Opening banner", "source": "Out-Of-Pocket", "url": "https://www.outofpocket.health/p/how-ai-is-reshaping-malpractice-carriers", "note": "" },
+        { "brand": "Lyft Healthcare", "sells": "Medical transport", "date": "2026-02-01", "format": "Primary sponsor", "source": "Health Tech Nerds", "url": "https://www.healthtechnerds.com/p/weekly-health-tech-reads-2-1-26", "note": "" },
+        { "brand": "10Pearls", "sells": "Digital services", "date": "2026-01-18", "format": "Primary sponsor", "source": "Health Tech Nerds", "url": "https://www.healthtechnerds.com/p/weekly-health-tech-reads-1-18-26", "note": "" },
+        { "brand": "Havarti Risk", "sells": "Healthcare risk", "date": "2026-01-18", "format": "Section sponsorship", "source": "Health Tech Nerds", "url": "https://www.healthtechnerds.com/p/weekly-health-tech-reads-1-18-26", "note": "Sponsored the JPM conference coverage" }
+      ],
+      "publishers": ["Out-Of-Pocket (32,000+, 58% open rate)", "Health Tech Nerds (30,000+)", "Hospitalogy (67,000+)", "Healthcare Huddle (30,000+)", "Second Opinion (~50,000, no sponsors observed)", "Health API Guy"],
+      "benchmarks": [
+        { "label": "Out-Of-Pocket sponsors page: public inventory (banner, full post capped at 4/year, podcast pre-roll, co-created courses), rates on request", "url": "https://www.outofpocket.health/sponsors" },
+        { "label": "CFO-style scarcity signal: 'we have 2 slots left this year' (June 2026 sponsored post)", "url": "https://www.outofpocket.health/p/lets-solve-getting-patient-charts" },
+        { "label": "Health Tech Nerds sponsor page: rates on request", "url": "https://www.healthtechnerds.com/sponsor" }
+      ]
+    },
+    {
+      "slug": "climate",
+      "name": "climate",
+      "title": "Who sponsors climate newsletters (2026 data)",
+      "metaDescription": "Brands observed paying for climate and energy newsletter and podcast sponsorships, with dated evidence, plus the vertical's one public rate card (Climate Insiders, $700 per issue).",
+      "updated": "2026-07-22",
+      "depth": "light",
+      "intro": "Every brand below was observed paying for a sponsorship on a climate or energy newsletter or podcast, with a link to the exact issue or episode. In this vertical the densest sponsored surface is B2B energy podcasts; buyers are energy infrastructure vendors, climate PR agencies, banks, and large tech companies. One publisher, Climate Insiders, publishes a full public rate card, which anchors pricing for the whole vertical.",
+      "sponsors": [
+        { "brand": "ENGIE", "sells": "Energy utility", "date": "2026-07-16", "format": "Podcast pre-roll", "source": "Catalyst (Latitude Media)", "url": "https://www.latitudemedia.com/news/catalyst-when-will-quantum-computing-have-its-breakout-moment/", "note": "" },
+        { "brand": "EnergyHub", "sells": "Grid-edge management", "date": "2026-07-16", "format": "Podcast pre-roll", "source": "Catalyst (Latitude Media)", "url": "https://www.latitudemedia.com/news/catalyst-when-will-quantum-computing-have-its-breakout-moment/", "note": "Long-term sponsor: three observations across 18 months" },
+        { "brand": "Bloom Energy", "sells": "Fuel cells", "date": "2026-07-16", "format": "Podcast pre-roll", "source": "Catalyst (Latitude Media)", "url": "https://www.latitudemedia.com/news/catalyst-when-will-quantum-computing-have-its-breakout-moment/", "note": "Second observation since December 2025" },
+        { "brand": "HSBC", "sells": "Banking", "date": "2026-07-06", "format": "Co-produced report", "source": "CTVC #303", "url": "https://www.ctvc.co/how-corporates-drive-demand-for-foak-projects-303/", "note": "'Produced in partnership with HSBC'" },
+        { "brand": "Salesforce", "sells": "CRM / enterprise software", "date": "2026-05-06", "format": "Episode sponsor", "source": "Shift Key (Heatmap)", "url": "https://heatmap.news/podcast/john-arnold-shift-key", "note": "Likely 2026 season sponsor; one strictly verified line" },
+        { "brand": "Third Way", "sells": "Policy think tank", "date": "2025-12-04", "format": "'Supported by' mention", "source": "Catalyst (Latitude Media)", "url": "https://www.latitudemedia.com/news/catalyst-who-benefits-from-the-ai-power-bottleneck/", "note": "" },
+        { "brand": "Climatize", "sells": "Climate investing", "date": "2025-08-28", "format": "Full issue takeover", "source": "Keep Cool", "url": "https://www.keepcool.co/p/taking-back-narrative-control", "note": "" },
+        { "brand": "Antenna Group", "sells": "Climate PR", "date": "2025-01-16", "format": "Podcast pre-roll", "source": "Catalyst (Latitude Media)", "url": "https://www.latitudemedia.com/news/catalyst-foak-tales/", "note": "" }
+      ],
+      "publishers": ["CTVC by Sightline Climate (70,000+)", "Catalyst / Latitude Media (densest sponsored surface)", "Shift Key / Heatmap News (50,000+ newsletter subscribers)", "Keep Cool (17,000+)", "Climate Insiders (19,000+)", "The Green Techpreneur", "Volts (counter-example: fully subscriber-funded, no ads)"],
+      "benchmarks": [
+        { "label": "Climate Insiders public rate card: $700 per issue (one sponsor max), $800 per LinkedIn post, 2+2 bundle at $2,000; 19,000+ subscribers, 42% open rate (~$37 CPM)", "url": "https://sponsors.climateinsiders.com/" },
+        { "label": "Latitude Media: display, podcast, sponsored articles, webinars; rates on request", "url": "https://www.latitudemedia.com/advertise/" }
+      ]
+    },
+    {
+      "slug": "finance-cfo",
+      "name": "finance and CFO",
+      "title": "Who sponsors finance and CFO newsletters (2026 data)",
+      "metaDescription": "Brands observed paying for CFO and corporate finance newsletter sponsorships in June-July 2026, with dated evidence, including reported pricing for the vertical's biggest properties.",
+      "updated": "2026-07-22",
+      "depth": "light",
+      "intro": "Every brand below was observed paying for a sponsorship on a corporate finance or CFO newsletter or podcast in June-July 2026, with a link to the exact issue or episode. The typical buyer is a growth-stage finance SaaS vendor (ERP, revenue recognition, equity, sales tax, FP&A). This is one of the richest sponsorship verticals we have scanned: its flagship newsletter reportedly earns ~90% of roughly $500k/year from sponsorships.",
+      "sponsors": [
+        { "brand": "Brex", "sells": "Corporate cards / spend", "date": "2026-07-21", "format": "Primary block", "source": "Mostly Metrics", "url": "https://mostlymetrics.com/p/the-tax-mechanic-that-showed-the-whole-company-my-comp", "note": "Six placements across three properties, with author endorsements" },
+        { "brand": "Abacum", "sells": "FP&A software", "date": "2026-07-19", "format": "Primary block", "source": "Mostly Metrics", "url": "https://mostlymetrics.com/p/cumberland-farms-ipo-s1-breakdown", "note": "Two placements in one week" },
+        { "brand": "Summation", "sells": "Finance AI", "date": "2026-07-18", "format": "Banner, top + footer", "source": "CFO Secrets", "url": "https://www.cfosecrets.io/p/the-trouble-with-business-partners", "note": "Three consecutive weekly issues" },
+        { "brand": "Pulley", "sells": "Cap table / equity", "date": "2026-06-27", "format": "Sponsored section", "source": "CFO Secrets", "url": "https://www.cfosecrets.io/p/handbrake-off-the-growth-cfo-iv", "note": "Also on 3 Run the Numbers episodes in July" },
+        { "brand": "Rillet", "sells": "ERP for SaaS", "date": "2026-07-20", "format": "Episode sponsor", "source": "Run the Numbers", "url": "https://podcasters.spotify.com/pod/show/cjgustafson222/episodes/Dave-McClure-and-Aman-Verjee-on-Angel-Investing-at-Scale--500-Startups--and-Practical-VC-e3lu2ut", "note": "Four episodes in July alone" },
+        { "brand": "RightRev", "sells": "Revenue recognition", "date": "2026-07-16", "format": "Episode sponsor", "source": "Run the Numbers", "url": "https://podcasters.spotify.com/pod/show/cjgustafson222/episodes/Cumberland-Farms-S-1-Breakdown-Fuel--Snacks--and-Debt-e3m4rb0", "note": "Four episodes observed" },
+        { "brand": "Anrok", "sells": "Sales tax for SaaS", "date": "2026-07-06", "format": "Episode sponsor", "source": "Run the Numbers", "url": "https://podcasters.spotify.com/pod/show/cjgustafson222/episodes/The-CFO-Who-Was-Ill-Equipped-to-Save-Lehman-Brothers-e3lja8j", "note": "Two episodes observed" },
+        { "brand": "Maximor", "sells": "Finance software", "date": "2026-07-13", "format": "Episode sponsor", "source": "Run the Numbers", "url": "https://podcasters.spotify.com/pod/show/cjgustafson222/episodes/Token-Economics--AI-ROI--and-the-Future-of-Investment-Banking-with-Rahul-Rekhi-e3lptjj", "note": "Two episodes observed" }
+      ],
+      "publishers": ["Mostly Metrics ('trusted by 75,000 readers')", "CFO Secrets (50,000+)", "OnlyCFO", "Run the Numbers (podcast, 3-5 sponsors per episode)", "Clouded Judgement (not sponsored, last 5 issues checked)", "The SaaS CFO"],
+      "benchmarks": [
+        { "label": "Mostly Metrics sponsored guest posts: $5,000-10,000 minimum per post (as reported by Growth In Reverse, not an official rate card)", "url": "https://growthinreverse.com/mostly-metrics/" },
+        { "label": "Run the Numbers podcast: 3-month packages, one reported at $100,000 (same third-party source)", "url": "https://growthinreverse.com/mostly-metrics/" },
+        { "label": "CFO Secrets partnership page: 'Reach 50,000 finance leaders', rates on request", "url": "https://www.cfosecrets.io/partnership" }
+      ]
     }
   ]
 }
