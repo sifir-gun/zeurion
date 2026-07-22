@@ -8,10 +8,23 @@ export function getStaticPaths() {
 
 const { v } = Astro.props;
 const others = data.verticals.filter((o) => o.slug !== v.slug);
+
+const itemListSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: `Brands observed sponsoring ${v.name} newsletters`,
+  numberOfItems: v.sponsors.length,
+  itemListElement: v.sponsors.map((s, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: s.brand,
+  })),
+};
 ---
 
 <Base title={v.title + ' · zeurion.ai'} description={v.metaDescription}>
   <main class="container">
+    <script type="application/ld+json" set:html={JSON.stringify(itemListSchema)} />
     <p class="mono eyebrow">Observed sponsors · updated {v.updated}</p>
     <h1>Who sponsors {v.name} newsletters</h1>
     <p class="note">{v.intro}</p>

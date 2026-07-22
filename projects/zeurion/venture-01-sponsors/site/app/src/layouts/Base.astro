@@ -8,6 +8,14 @@ interface Props {
 }
 const { title, description } = Astro.props;
 const verticals = verticalsData.verticals;
+
+const orgSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Zeurion',
+  url: new URL('/', Astro.site).toString(),
+  logo: new URL('/favicon-512.png', Astro.site).toString(),
+};
 ---
 
 <!doctype html>
@@ -34,6 +42,7 @@ const verticals = verticalsData.verticals;
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={new URL('/og.png', Astro.site)} />
+    <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link

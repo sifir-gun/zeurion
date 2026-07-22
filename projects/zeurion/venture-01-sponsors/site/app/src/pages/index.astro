@@ -50,6 +50,16 @@ const faq = [
     a: 'Five minutes: your newsletter URL, your niche in one sentence, subscriber count, open rate if you know it, and optionally the newsletters you consider comparable. The report is delivered within 5 business days as a PDF plus a CSV of contacts.',
   },
 ];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: { '@type': 'Answer', text: item.a },
+  })),
+};
 ---
 
 <Base
@@ -173,6 +183,7 @@ const faq = [
   </section>
 
   <section class="faq reveal" aria-labelledby="faq-title">
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
     <div class="container">
       <h2 id="faq-title">Questions, answered plainly</h2>
       {faq.map((item) => (
