@@ -1,0 +1,26 @@
+# Zeurion
+
+> Zeurion sells one-time sponsor prospecting reports for niche B2B newsletter operators (2,000 to 50,000 subscribers): 30 brands with dated, publicly linked evidence that they already sponsor comparable newsletters or podcasts, one contact per brand with an honest verification status, a ready-to-send pitch for each, a pricing recommendation benchmarked on public rate cards, and a 14-day execution plan. €349 one-time, no commission, no marketplace. Every claim on this site links to a public, dated source.
+
+Method, stated plainly: observations come from public archives only (newsletter issues, podcast feeds, sponsor pages, press releases), each with a date and a URL. No email address is guessed. No brand is contacted on anyone's behalf.
+
+## Product
+
+- [Home](https://www.zeurion.ai/): what the report contains, pricing, plain-language FAQ
+- [Sample entries](https://www.zeurion.ai/sample): three full entries from a real report, prepared for a cybersecurity newsletter (~15,000 subscribers, operator anonymized)
+
+## Free data
+
+- [Who sponsors newsletters, by vertical](https://www.zeurion.ai/who-sponsors/): hub of brands observed paying for newsletter and podcast sponsorships, with dates, formats and source links
+- [Cybersecurity](https://www.zeurion.ai/who-sponsors/cybersecurity)
+- [Data engineering](https://www.zeurion.ai/who-sponsors/data-engineering)
+- [Health tech](https://www.zeurion.ai/who-sponsors/health-tech)
+- [Climate](https://www.zeurion.ai/who-sponsors/climate)
+- [Finance and CFO](https://www.zeurion.ai/who-sponsors/finance-cfo)
+- [Sponsorship rate calculator](https://www.zeurion.ai/calculator): estimate a newsletter's sponsorship rates from documented public benchmarks
+
+## Legal
+
+- [Legal notice](https://www.zeurion.ai/legal)
+- [Terms](https://www.zeurion.ai/terms)
+- [Privacy](https://www.zeurion.ai/privacy)
