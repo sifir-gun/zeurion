@@ -66,7 +66,7 @@ const faq = [
     </div>
   </header>
 
-  <section class="proof" aria-labelledby="proof-title">
+  <section class="proof reveal" aria-labelledby="proof-title">
     <div class="container">
       <h2 id="proof-title">From the sample report</h2>
       <p class="section-note">
@@ -85,6 +85,11 @@ const faq = [
               <span class={`dot ${row.tier === 1 ? 'full' : ''}`} aria-hidden="true"></span>
               <span class="brand">{row.brand}</span>
               <span class="subject">{row.subject}</span>
+              {row.tier === 1 && (
+                <svg class="flag" viewBox="0 0 16 16" width="13" height="13" aria-label="Priority" role="img">
+                  <path d="M3 1v14M3 2h9l-2.5 3L12 8H3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              )}
               <span class="tag mono">{row.tag}</span>
               <span class="date mono">{row.date}</span>
             </div>
@@ -102,7 +107,7 @@ const faq = [
     </div>
   </section>
 
-  <section class="offer" aria-labelledby="offer-title">
+  <section class="offer reveal" aria-labelledby="offer-title">
     <div class="container">
       <h2 id="offer-title">What you get</h2>
       <ul class="offer-list">
@@ -145,7 +150,7 @@ const faq = [
     </div>
   </section>
 
-  <section class="faq" aria-labelledby="faq-title">
+  <section class="faq reveal" aria-labelledby="faq-title">
     <div class="container">
       <h2 id="faq-title">Questions, answered plainly</h2>
       {faq.map((item) => (
@@ -166,6 +171,15 @@ const faq = [
 
   section { padding: 3.5rem 0 0; }
   .section-note { color: var(--ink-soft); margin: 0.75rem 0 1.5rem; max-width: 44rem; }
+
+  .offer {
+    background: var(--muted);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    margin-top: 4rem;
+    padding: 3.5rem 0;
+  }
+  .offer .tag, .offer .roi { background: var(--surface); }
 
   .inbox-window {
     border: 1px solid var(--line);
@@ -203,13 +217,14 @@ const faq = [
   .row.more .subject { color: var(--accent); font-size: 0.85rem; }
   .row {
     display: grid;
-    grid-template-columns: 1rem 11rem 1fr auto auto;
+    grid-template-columns: 1rem 11rem 1fr auto auto auto;
     gap: 0.9rem;
     align-items: center;
     padding: 0.8rem 1rem;
     border-bottom: 1px solid var(--line);
     transition: background 180ms ease, transform 180ms ease;
   }
+  .flag { color: var(--priority); flex-shrink: 0; }
   .row:last-child { border-bottom: none; }
   .row:hover { background: var(--muted); transform: translateX(2px); }
   .dot {
@@ -261,7 +276,7 @@ const faq = [
 
   @media (max-width: 720px) {
     .row { grid-template-columns: 1rem 1fr auto; }
-    .subject, .date { display: none; }
+    .subject, .date, .flag { display: none; }
     .row.more { grid-template-columns: 1rem 1fr; }
     .row.more .subject { display: block; }
   }

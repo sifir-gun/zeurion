@@ -48,3 +48,10 @@ V1 : clair uniquement (l'inbox de référence est claire). Le sombre attendra un
 - La signature s'assume : l'inbox est rendue comme une fenêtre d'application mail (barre avec pastilles, libellé mono « inbox · sponsor-opportunities », compteur « 30 unread » en pilule accent, ombre portée douce, ligne « + 24 more in the full report »).
 - Échelle typographique relevée : h1 jusqu'à 3,6rem, h2 jusqu'à 2,1rem.
 - Un seul moment de contraste : la section prix passe en bande sombre pleine largeur (fond --ink, texte clair), le reste de la page reste clair. C'est l'unique inversion autorisée.
+
+## Révision v1.2 (2026-07-22, extractions ui-ux-pro-max exploitées à fond)
+
+- Nouveau token --priority : #DC2626, issu de la palette « Inbox blue + priority red » de ui-ux-pro-max. Usage strictement fonctionnel : le drapeau de priorité SVG sur les lignes tier 1 de l'inbox. Jamais décoratif, jamais sur les CTA.
+- Scroll reveal subtil sur les sections (opacity + 12px, 350ms, une seule fois, IntersectionObserver), conforme au preset « Scroll Reveal (Subtle) » de ui-ux-pro-max. Dégradation propre : sans JS tout est visible, prefers-reduced-motion désactive tout.
+- Rythme de page : la section offre passe sur fond --muted (bande bordée), créant l'alternance clair / gris / clair / sombre.
+- Typo : paires alternatives évaluées via le domaine typography (Fira Code/Sans, Space Mono), rejetées : Space Grotesk + Inter + IBM Plex Mono reste plus adapté au concept.

@@ -24,6 +24,18 @@ const { title, description } = Astro.props;
     />
   </head>
   <body>
+    <script>
+      document.documentElement.classList.add('js');
+      const io = new IntersectionObserver(
+        (entries) => entries.forEach((e) => {
+          if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+        }),
+        { rootMargin: '0px 0px -8% 0px' }
+      );
+      window.addEventListener('DOMContentLoaded', () =>
+        document.querySelectorAll('.reveal').forEach((el) => io.observe(el))
+      );
+    </script>
     <header class="site-head">
       <div class="container head-inner">
         <a class="wordmark" href="/">zeurion<span class="accent-dot">.</span></a>
