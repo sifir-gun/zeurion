@@ -9,6 +9,10 @@ const verticals = verticalsData.verticals;
 // légales à finaliser, voir site/donnees-legales.md).
 const STRIPE_PAYMENT_LINK = '';
 
+// Date de la plus récente observation du corpus (extraction du 2026-07-21).
+// À mettre à jour à chaque rafraîchissement des données de l'échantillon.
+const LAST_OBSERVATION = 'Jul 21, 2026';
+
 const inboxRows = [
   { tier: 1, brand: 'Tines', subject: 'Same campaign in 4 newsletters, 5 weeks', tag: 'PRIMARY ×5', date: 'Jul 06' },
   { tier: 1, brand: 'Sublime Security', subject: 'Bought a full Risky Business week', tag: 'TAKEOVER', date: 'Jul 10' },
@@ -101,7 +105,7 @@ const faq = [
           </div>
         </div>
         <p class="stats mono">
-          103 dated observations · 14+ sources · every claim publicly sourced
+          <span class="fresh-dot" aria-hidden="true"></span>last observation {LAST_OBSERVATION} · 103 dated · 14+ sources · every claim publicly linked
         </p>
         <p class="proof-link"><a href="/sample">Read three full entries from the sample →</a></p>
       </div>
@@ -197,6 +201,15 @@ const faq = [
   .hero-proof .row .date { display: none; }
   .hero-proof .row.more { grid-template-columns: 1rem 1fr; }
   .hero-proof .stats { margin: 0.9rem 0 0.4rem; font-size: 0.78rem; }
+  /* Fraîcheur des données : pastille statique (les animations en boucle sont
+     interdites par le design system), --ok réservé aux preuves vérifiées */
+  .fresh-dot {
+    display: inline-block;
+    width: 0.45rem; height: 0.45rem;
+    border-radius: 50%;
+    background: var(--ok);
+    margin-right: 0.45rem;
+  }
   .proof-link { font-size: 0.9rem; }
   .proof-link a { text-decoration: none; }
   .proof-link a:hover { text-decoration: underline; }
