@@ -13,13 +13,15 @@ const STRIPE_PAYMENT_LINK = '';
 // À mettre à jour à chaque rafraîchissement des données de l'échantillon.
 const LAST_OBSERVATION = 'Jul 21, 2026';
 
+// Objets calibrés pour tenir sans ellipse dans la colonne du hero,
+// en restant fidèles aux observations de l'extraction.
 const inboxRows = [
-  { tier: 1, brand: 'Tines', subject: 'Same campaign in 4 newsletters, 5 weeks', tag: 'PRIMARY ×5', date: 'Jul 06' },
-  { tier: 1, brand: 'Sublime Security', subject: 'Bought a full Risky Business week', tag: 'TAKEOVER', date: 'Jul 10' },
-  { tier: 1, brand: 'Corelight', subject: 'Weekly pack with sponsored demo', tag: 'PRIMARY ×3', date: 'Jul 01' },
-  { tier: 1, brand: 'Nebulock', subject: 'Paid a wholly sponsored episode', tag: 'DEDICATED', date: 'Jul 08' },
+  { tier: 1, brand: 'Tines', subject: 'One campaign, 4 titles', tag: 'PRIMARY ×5', date: 'Jul 06' },
+  { tier: 1, brand: 'Sublime Security', subject: 'Bought a full Risky Biz week', tag: 'TAKEOVER', date: 'Jul 10' },
+  { tier: 1, brand: 'Corelight', subject: 'Full week, sponsored demo', tag: 'PRIMARY ×3', date: 'Jul 01' },
+  { tier: 1, brand: 'Nebulock', subject: 'Paid a dedicated episode', tag: 'DEDICATED', date: 'Jul 08' },
   { tier: 2, brand: 'ThreatLocker', subject: 'On every episode since April', tag: 'AUDIO ×10', date: 'Jul 21' },
-  { tier: 2, brand: 'runZero', subject: 'Three titles inside three weeks', tag: 'PRIMARY ×3', date: 'Jun 26' },
+  { tier: 2, brand: 'runZero', subject: 'Three titles in three weeks', tag: 'PRIMARY ×3', date: 'Jun 26' },
 ];
 
 const faq = [
@@ -105,7 +107,8 @@ const faq = [
           </div>
         </div>
         <p class="stats mono">
-          <span class="fresh-dot" aria-hidden="true"></span>last observation {LAST_OBSERVATION} · 103 dated · 14+ sources · every claim publicly linked
+          <span class="fresh-dot" aria-hidden="true"></span>last observation {LAST_OBSERVATION}<br />
+          103 dated observations · 14+ sources · every claim publicly linked
         </p>
         <p class="proof-link"><a href="/sample">Read three full entries from the sample →</a></p>
       </div>
