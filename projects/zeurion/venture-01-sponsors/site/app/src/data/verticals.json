@@ -1,0 +1,39 @@
+{
+  "verticals": [
+    {
+      "slug": "cybersecurity",
+      "name": "cybersecurity",
+      "title": "Who sponsors cybersecurity newsletters (2026 data)",
+      "metaDescription": "18 brands observed paying for cybersecurity newsletter and podcast sponsorships between April and July 2026, with dated, linked evidence for each placement.",
+      "updated": "2026-07-21",
+      "depth": "deep",
+      "intro": "Every brand below was observed paying for a sponsorship on a cybersecurity newsletter or podcast between April and July 2026. Each observation links to the issue or episode where it appeared, so you can verify every line. This is the vertical our sample report was built in, from 103 dated observations across 14+ sources.",
+      "sponsors": [
+        { "brand": "Tines", "sells": "Security automation", "date": "2026-07-06", "format": "Primary", "source": "Unsupervised Learning #535", "url": "https://newsletter.danielmiessler.com/p/unsupervised-learning-no-535", "note": "Same campaign ran in 4 newsletters over 5 weeks" },
+        { "brand": "Wiz", "sells": "Cloud security", "date": "2026-07-16", "format": "Primary", "source": "tl;dr sec #337", "url": "https://tldrsec.com/p/tldr-sec-337", "note": "Second tl;dr sec primary in 5 weeks" },
+        { "brand": "Sublime Security", "sells": "Email detection", "date": "2026-07-10", "format": "Week takeover", "source": "Risky Bulletin", "url": "https://news.risky.biz/risky-bulletin-india-bans-app-used-to-hack-e-rickshaws-in-viral-videos/", "note": "Full week of Risky Business inventory" },
+        { "brand": "Corelight", "sells": "Network detection (NDR)", "date": "2026-07-01", "format": "Primary + demo", "source": "Risky Bulletin", "url": "https://news.risky.biz/risky-bulletin-researcher-drops-giant-cache-of-zero-day-exploits/", "note": "Weekly pack with sponsored interview" },
+        { "brand": "Nebulock", "sells": "Threat hunting", "date": "2026-07-08", "format": "Dedicated episode", "source": "Risky Business Soap Box", "url": "https://risky.biz/video/soap-box-using-threat-hunting-to-drive-detection/", "note": "Wholly sponsored long-form episode" },
+        { "brand": "Maze", "sells": "AI vulnerability triage", "date": "2026-07-06", "format": "Primary", "source": "Security, Funded #251", "url": "https://www.returnonsecurity.com/p/security-funded-251", "note": "Multi-newsletter launch campaign" },
+        { "brand": "runZero", "sells": "Asset discovery", "date": "2026-06-10", "format": "Sponsored episode", "source": "Risky Business #841", "url": "https://risky.biz/RB841/", "note": "Three comparable titles in three weeks" },
+        { "brand": "ThreatLocker", "sells": "Endpoint control", "date": "2026-07-13", "format": "Full week", "source": "Cyber Security Headlines", "url": "https://cisoseries.libsyn.com/russias-router-access-routes-memghost-haunts-ai-memory-dhs-alert-got-waved-off-twice", "note": "Largest audio buyer observed: 10+ airings this quarter" },
+        { "brand": "Dropzone", "sells": "AI SOC analyst", "date": "2026-06-05", "format": "Dedicated episode", "source": "Risky Business Soap Box 108", "url": "https://risky.biz/SOAPBOX108/", "note": "" },
+        { "brand": "authentik", "sells": "Identity / SSO", "date": "2026-07-16", "format": "Secondary", "source": "tl;dr sec #337", "url": "https://tldrsec.com/p/tldr-sec-337", "note": "Also a sponsored Risky Business episode in June" },
+        { "brand": "Thinkst Canary", "sells": "Deception / canaries", "date": "2026-07-20", "format": "Primary + podcast", "source": "Risky Bulletin", "url": "https://news.risky.biz/risky-bulletin-hacker-wipes-romanias-entire-land-registry-database/", "note": "Long-standing Risky Business partner" },
+        { "brand": "Material Security", "sells": "Email / collab security", "date": "2026-07-16", "format": "Episode sponsor", "source": "Defense in Depth", "url": "https://defenseindepth.libsyn.com/protecting-ai-agents-in-o365-and-google-workspace", "note": "Monthly rotation, three episodes observed" },
+        { "brand": "Push Security", "sells": "Identity attack detection", "date": "2026-06-25", "format": "Primary", "source": "tl;dr sec #334", "url": "https://tldrsec.com/p/tldr-sec-334", "note": "" },
+        { "brand": "Varonis", "sells": "Data security", "date": "2026-07-10", "format": "Primary", "source": "Vulnerable U #176", "url": "https://www.vulnu.com/p/vulnerable-u-176", "note": "CTF event campaign" },
+        { "brand": "Intruder", "sells": "Vulnerability management", "date": "2026-07-17", "format": "Primary", "source": "Vulnerable U #177", "url": "https://www.vulnu.com/p/vulnerable-u-177", "note": "" },
+        { "brand": "SpecterOps", "sells": "Adversary tactics", "date": "2026-07-20", "format": "Primary", "source": "Security, Funded #253", "url": "https://www.returnonsecurity.com/p/security-funded-253", "note": "Two consecutive weeks ahead of Black Hat" },
+        { "brand": "Opal Security", "sells": "Access management", "date": "2026-06-19", "format": "Secondary", "source": "Vulnerable U #173", "url": "https://www.vulnu.com/p/vulnerable-u-173", "note": "Two native ads in the same title" },
+        { "brand": "Drata", "sells": "Compliance automation", "date": "2026-06-29", "format": "Secondary", "source": "Security, Funded #250", "url": "https://www.returnonsecurity.com/p/security-funded-250", "note": "" }
+      ],
+      "publishers": ["tl;dr sec", "Vulnerable U", "Resilient Cyber", "Return on Security", "Risky Business (Bulletin, Srsly, Soap Box)", "Unsupervised Learning", "CloudSecList", "Venture in Security", "CISO Series (Defense in Depth, Cyber Security Headlines)", "Darknet Diaries", "Security Weekly"],
+      "benchmarks": [
+        { "label": "CloudSecList: $1,950 per placement at 12,000+ subscribers, sold out into 2026", "url": "https://cloudseclist.com/sponsor" },
+        { "label": "Vulnerable U: 32,000+ subscribers, ~44% open rate, two-tier packaging", "url": "https://www.vulnu.com/c/sponsors" },
+        { "label": "Resilient Cyber: 31,287 subscribers, 46% open rate, featured slot + podcast interview", "url": "https://www.resilientcyber.io/sponsorships" }
+      ]
+    }
+  ]
+}

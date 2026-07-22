@@ -1,0 +1,165 @@
+---
+import Base from '../layouts/Base.astro';
+// Aimant à leads : valeur donnée sans inscription (règle site-venture).
+// Chaque multiplicateur est ancré sur un benchmark public listé en bas de page.
+---
+
+<Base
+  title="Newsletter sponsorship rate calculator · zeurion.ai"
+  description="Estimate what your newsletter sponsorship slots are worth, from public benchmarks: audience type, subscriber count, open rate, and placement format. Free, no signup."
+>
+  <main class="container">
+    <p class="mono eyebrow">Free tool · no signup</p>
+    <h1>What is your sponsorship slot worth?</h1>
+    <p class="note">
+      An estimate range built from public benchmarks (listed below), not a promise. Direct
+      deals vary with engagement, niche depth, and how well you pitch. If your open rate
+      beats your peers', charge for it.
+    </p>
+
+    <form class="calc" aria-describedby="result">
+      <div class="field">
+        <label for="subs">Subscribers</label>
+        <input id="subs" name="subs" type="number" min="500" max="200000" value="10000" inputmode="numeric" />
+      </div>
+      <div class="field">
+        <label for="openrate">Open rate (%)</label>
+        <input id="openrate" name="openrate" type="number" min="10" max="80" value="42" inputmode="numeric" />
+      </div>
+      <div class="field">
+        <label for="audience">Audience type</label>
+        <select id="audience" name="audience">
+          <option value="b2b" selected>Specialized B2B (a job title reads you)</option>
+          <option value="prosumer">Prosumer / professional-adjacent</option>
+          <option value="general">General interest</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="format">Placement format</label>
+        <select id="format" name="format">
+          <option value="primary" selected>Primary (top of issue)</option>
+          <option value="secondary">Secondary (lower placement)</option>
+          <option value="dedicated">Dedicated send / takeover</option>
+        </select>
+      </div>
+    </form>
+
+    <div class="result-box" id="result" aria-live="polite">
+      <p class="mono result-label">Estimated range per placement</p>
+      <p class="result" id="range">$450 – $1,600</p>
+      <p class="result-note" id="permonth"></p>
+    </div>
+
+    <section class="method">
+      <h2>How this is calculated</h2>
+      <p>
+        Base rate per 1,000 subscribers per placement, by audience type, taken from public
+        benchmarks: general interest $15-35 (beehiiv's published cost guide), prosumer
+        $25-60, specialized B2B $45-160. The B2B bounds are two real, public rate cards:
+        VuTrinh (data engineering, $450 per slot at ~10,000 subscribers, public media kit)
+        at the low end, CloudSecList (cloud security, $1,950 per placement at 12,000+
+        subscribers, sold out into 2026) at the high end. Secondary placements are priced
+        at roughly 45 percent of primary and dedicated sends at 160 percent, matching the
+        two-tier packaging observed across the segment. The open-rate adjustment is
+        centered on 42 percent, the midpoint of rates published by niche operators
+        (37 to 50 percent).
+      </p>
+      <ul class="sources">
+        <li><a href="https://cloudseclist.com/sponsor">CloudSecList sponsor page</a> ($1,950 per placement, 12k+ subscribers)</li>
+        <li><a href="https://vutr.substack.com/p/media-kit">VuTrinh public media kit</a> ($450 per slot, ~10k subscribers)</li>
+        <li><a href="https://www.beehiiv.com/blog/newsletter-sponsorship-cost">beehiiv: newsletter sponsorship cost guide</a> (CPM ranges by audience)</li>
+        <li><a href="https://www.vulnu.com/c/sponsors">Vulnerable U sponsors page</a> (published engagement metrics, two-tier packaging)</li>
+      </ul>
+    </section>
+
+    <section class="next">
+      <h2>Knowing your price is half the job</h2>
+      <p>
+        The other half is knowing which brands are already paying for placements like
+        yours, and who to write to. That is what the Zeurion report does: 30 matched
+        brands with dated evidence, contacts, and ready-to-send pitches.
+      </p>
+      <a class="btn" href="/#buy">See the report · €349</a>
+    </section>
+  </main>
+</Base>
+
+<script>
+  const CPM = { b2b: [45, 160], prosumer: [25, 60], general: [15, 35] };
+  const FORMAT = { primary: 1, secondary: 0.45, dedicated: 1.6 };
+
+  const $ = (id) => document.getElementById(id);
+  const fmt = (n) => '$' + (Math.round(n / 25) * 25).toLocaleString('en-US');
+
+  function update() {
+    const subs = Math.max(500, Number($('subs').value) || 0);
+    const open = Math.min(80, Math.max(10, Number($('openrate').value) || 42));
+    const [lo, hi] = CPM[$('audience').value];
+    const mult = FORMAT[$('format').value] * Math.min(1.25, Math.max(0.75, open / 42));
+    const low = (subs / 1000) * lo * mult;
+    const high = (subs / 1000) * hi * mult;
+    $('range').textContent = `${fmt(low)} – ${fmt(high)}`;
+    const monthly = $('format').value === 'primary'
+      ? `Four primary slots a month: ${fmt(low * 4)} – ${fmt(high * 4)} of inventory.`
+      : '';
+    $('permonth').textContent = monthly;
+  }
+
+  ['subs', 'openrate', 'audience', 'format'].forEach((id) =>
+    $(id).addEventListener('input', update)
+  );
+  update();
+</script>
+
+<style>
+  main { padding-top: 3.5rem; max-width: 780px; }
+  .eyebrow { font-size: 0.875rem; color: var(--accent); margin-bottom: 1rem; }
+  .note { color: var(--ink-soft); max-width: 40rem; margin: 1rem 0 2rem; }
+
+  .calc {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 1.5rem;
+  }
+  .field { display: flex; flex-direction: column; gap: 0.4rem; }
+  label { font-weight: 600; font-size: 0.9rem; }
+  input, select {
+    font: inherit;
+    padding: 0.6rem 0.75rem;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--bg);
+    color: var(--ink);
+  }
+  input:focus-visible, select:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+  .result-box {
+    background: var(--ink);
+    color: #f4f6f9;
+    border-radius: 12px;
+    padding: 1.5rem 1.75rem;
+    margin: 1.5rem 0 3rem;
+  }
+  .result-label { font-size: 0.8rem; color: #a6adbb; }
+  .result {
+    font-family: var(--font-mono);
+    font-size: clamp(1.8rem, 5vw, 2.6rem);
+    font-weight: 500;
+    margin: 0.35rem 0;
+  }
+  .result-note { color: #a6adbb; font-size: 0.9rem; }
+
+  .method h2, .next h2 { font-size: 1.35rem; margin-bottom: 0.75rem; }
+  .method p, .next p { color: var(--ink-soft); max-width: 44rem; }
+  .sources { margin: 1rem 0 3rem; padding-left: 1.2rem; display: grid; gap: 0.4rem; color: var(--ink-soft); font-size: 0.9rem; }
+  .next { margin-bottom: 2rem; }
+  .next .btn { margin-top: 1rem; }
+
+  @media (max-width: 640px) {
+    .calc { grid-template-columns: 1fr; }
+  }
+</style>

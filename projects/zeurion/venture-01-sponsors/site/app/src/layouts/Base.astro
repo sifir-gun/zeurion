@@ -41,12 +41,20 @@ const { title, description } = Astro.props;
         <a class="wordmark" href="/">zeurion<span class="accent-dot">.</span></a>
         <nav aria-label="Main">
           <a href="/sample">Sample</a>
+          <a href="/calculator">Calculator</a>
           <a href="/#buy" class="head-cta">€349</a>
         </nav>
       </div>
     </header>
     <slot />
     <footer>
+      <div class="container footer-resources">
+        <span class="mono footer-label">Free resources</span>
+        <nav aria-label="Resources">
+          <a href="/calculator">Sponsorship rate calculator</a>
+          <a href="/who-sponsors/cybersecurity">Who sponsors cybersecurity newsletters</a>
+        </nav>
+      </div>
       <div class="container footer-inner">
         <span class="mono footer-brand">zeurion.ai</span>
         <nav aria-label="Legal">
@@ -107,6 +115,20 @@ const { title, description } = Astro.props;
     margin-top: 5rem;
     padding: 2rem 0;
   }
+  .footer-resources {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    font-size: 0.875rem;
+    padding-bottom: 1.25rem;
+    margin-bottom: 1.25rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .footer-label { color: var(--ink-soft); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; }
+  .footer-resources nav { display: flex; flex-wrap: wrap; gap: 1.25rem; }
+  .footer-resources nav a { color: var(--ink-soft); text-decoration: none; }
+  .footer-resources nav a:hover { color: var(--accent); }
   .footer-inner {
     display: flex;
     flex-wrap: wrap;

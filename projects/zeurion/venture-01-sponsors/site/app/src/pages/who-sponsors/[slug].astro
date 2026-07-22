@@ -1,0 +1,118 @@
+---
+import Base from '../../layouts/Base.astro';
+import data from '../../data/verticals.json';
+
+export function getStaticPaths() {
+  return data.verticals.map((v) => ({ params: { slug: v.slug }, props: { v } }));
+}
+
+const { v } = Astro.props;
+const others = data.verticals.filter((o) => o.slug !== v.slug);
+---
+
+<Base title={v.title + ' · zeurion.ai'} description={v.metaDescription}>
+  <main class="container">
+    <p class="mono eyebrow">Observed sponsors · updated {v.updated}</p>
+    <h1>Who sponsors {v.name} newsletters</h1>
+    <p class="note">{v.intro}</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Brand</th>
+          <th scope="col">Sells</th>
+          <th scope="col">Where observed</th>
+          <th scope="col">Format</th>
+          <th scope="col">Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        {v.sponsors.map((s) => (
+          <tr>
+            <td class="brand-cell">{s.brand}</td>
+            <td class="soft">{s.sells}</td>
+            <td><a href={s.url} rel="nofollow noopener">{s.source}</a>{s.note && <span class="soft note-inline"> · {s.note}</span>}</td>
+            <td><span class="tag mono">{s.format}</span></td>
+            <td class="mono soft">{s.date}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+
+    <section>
+      <h2>What these newsletters charge</h2>
+      <ul class="bench">
+        {v.benchmarks.map((b) => (
+          <li><a href={b.url} rel="nofollow noopener">{b.label}</a></li>
+        ))}
+      </ul>
+      <p class="soft">
+        Estimate your own slot with our <a href="/calculator">free rate calculator</a>.
+      </p>
+    </section>
+
+    <section>
+      <h2>Sources scanned for this page</h2>
+      <p class="soft">{v.publishers.join(' · ')}</p>
+    </section>
+
+    <section class="cta-block">
+      <h2>This is the free version</h2>
+      <p class="soft">
+        The full Zeurion report does this for your newsletter specifically: 30 brands
+        matched to your audience, the contact who owns each budget, and a ready-to-send
+        pitch per brand. Fixed price, no commission.
+      </p>
+      <a class="btn" href="/#buy">See the report · €349</a>
+    </section>
+
+    {others.length > 0 && (
+      <section>
+        <h2>Other verticals</h2>
+        <p class="soft">
+          {others.map((o, i) => (
+            <>
+              <a href={`/who-sponsors/${o.slug}`}>Who sponsors {o.name} newsletters</a>
+              {i < others.length - 1 && ' · '}
+            </>
+          ))}
+        </p>
+      </section>
+    )}
+  </main>
+</Base>
+
+<style>
+  main { padding-top: 3.5rem; }
+  .eyebrow { font-size: 0.875rem; color: var(--accent); margin-bottom: 1rem; }
+  .note { color: var(--ink-soft); max-width: 46rem; margin: 1rem 0 2rem; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    overflow: hidden;
+    font-size: 0.95rem;
+  }
+  th, td { text-align: left; padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { font-family: var(--font-display); font-size: 0.85rem; background: var(--muted); }
+  tr:last-child td { border-bottom: none; }
+  .brand-cell { font-weight: 600; white-space: nowrap; }
+  .soft { color: var(--ink-soft); }
+  .note-inline { font-size: 0.85rem; }
+  .tag { font-size: 0.72rem; background: var(--muted); border: 1px solid var(--line); border-radius: 4px; padding: 0.1rem 0.4rem; white-space: nowrap; }
+  section { margin-top: 2.5rem; }
+  section h2 { font-size: 1.35rem; margin-bottom: 0.6rem; }
+  .bench { padding-left: 1.2rem; display: grid; gap: 0.4rem; color: var(--ink-soft); }
+  .cta-block {
+    background: var(--muted);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 1.5rem 1.75rem;
+  }
+  .cta-block .btn { margin-top: 0.75rem; }
+  @media (max-width: 760px) {
+    table { display: block; overflow-x: auto; }
+  }
+</style>
